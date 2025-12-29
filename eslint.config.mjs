@@ -1,18 +1,34 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTs from "eslint-config-next/typescript";
+// eslint.config.mjs
+import nextVitals from "eslint-config-next/core-web-vitals"
+import nextTs from "eslint-config-next/typescript"
+import { defineConfig } from "eslint/config"
 
-const eslintConfig = defineConfig([
-  ...nextVitals,
-  ...nextTs,
-  // Override default ignores of eslint-config-next.
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-  ]),
-]);
+export default defineConfig([
+    // Default config of Next 16 (Web Vitals + Typescript)
+    ...nextVitals,
+    ...nextTs,
 
-export default eslintConfig;
+    // Global Ignores (Skip checking files)
+    {
+        ignores: [
+            ".next/**",
+            "dist/**",
+            "node_modules/**",
+            ".turbo/**",
+            "out/**",
+            "build/**",
+            "coverage/**",
+        ],
+    },
+
+    // Custom rules
+    {
+        files: ["**/*.{js,jsx,ts,tsx}"],
+        rules: {
+            "react/no-unknown-property": ["error", { ignore: ["fetchPriority"] }],
+
+            // Turn off to use Prettier to format files
+            indent: "off",
+        },
+    },
+])
