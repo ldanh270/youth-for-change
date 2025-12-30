@@ -263,3 +263,58 @@
         @apply bg-background text-foreground;
     }
 }
+
+/* SDG Background Utilities */
+@layer utilities {
+    .bg-sdg-1 {
+        background-color: var(--sdg-1);
+    }
+    .bg-sdg-2 {
+        background-color: var(--sdg-2);
+    }
+    .bg-sdg-3 {
+        background-color: var(--sdg-3);
+    }
+    .bg-sdg-4 {
+        background-color: var(--sdg-4);
+    }
+    .bg-sdg-5 {
+        background-color: var(--sdg-5);
+    }
+    .bg-sdg-6 {
+        background-color: var(--sdg-6);
+    }
+    .bg-sdg-7 {
+        background-color: var(--sdg-7);
+    }
+    .bg-sdg-8 {
+        background-color: var(--sdg-8);
+    }
+    .bg-sdg-9 {
+        background-color: var(--sdg-9);
+    }
+    .bg-sdg-10 {
+        background-color: var(--sdg-10);
+    }
+    .bg-sdg-11 {
+        background-color: var(--sdg-11);
+    }
+    .bg-sdg-12 {
+        background-color: var(--sdg-12);
+    }
+    .bg-sdg-13 {
+        background-color: var(--sdg-13);
+    }
+    .bg-sdg-14 {
+        background-color: var(--sdg-14);
+    }
+    .bg-sdg-15 {
+        background-color: var(--sdg-15);
+    }
+    .bg-sdg-16 {
+        background-color: var(--sdg-16);
+    }
+    .bg-sdg-17 {
+        background-color: var(--sdg-17);
+    }
+}
