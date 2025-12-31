@@ -9,26 +9,26 @@ import Link from "next/link"
 
 const slides = [
     {
-        id: 1,
+        id: 0,
         title: "Empowering Youth for Sustainable Change",
         subtitle: "Join the movement to achieve the 17 Sustainable Development Goals",
-        image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1920&q=80",
+        image: "/hero/friends.jpg",
         cta: "Get Involved",
         link: "/signup",
     },
     {
-        id: 2,
+        id: 1,
         title: "Climate Action Starts With You",
         subtitle: "Be part of the solution for SDG 13 - Climate Action",
-        image: "https://images.unsplash.com/photo-1569163139599-0f4517e36f51?w=1920&q=80",
+        image: "/hero/eco_ego.jpg",
         cta: "Learn More",
         link: "/sdg/13",
     },
     {
-        id: 3,
+        id: 2,
         title: "Quality Education for All",
         subtitle: "Supporting SDG 4 through innovative learning programs",
-        image: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=1920&q=80",
+        image: "/hero/library.jpg",
         cta: "Explore Programs",
         link: "/sdg/4",
     },
@@ -39,40 +39,42 @@ export function HeroSection() {
 
     useEffect(() => {
         const timer = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % slides.length)
+            setCurrentSlide((prev) => {
+                if (prev === slides.length - 1) return 0
+                return prev + 1
+            })
         }, 5000)
         return () => clearInterval(timer)
     }, [])
 
-    const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length)
-    const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+    const nextSlide = () =>
+        setCurrentSlide((prev) => {
+            if (prev === slides.length - 1) return 0
+            return prev + 1
+        })
+    const prevSlide = () =>
+        setCurrentSlide((prev) => {
+            if (prev === 0) return slides.length - 1
+            return prev - 1
+        })
 
     return (
-        <section className="relative h-150 overflow-hidden lg:h-175">
-            {slides.map((slide, index) => (
+        <section className="relative h-screen w-full">
+            {slides.map((slide) => (
                 <div
                     key={slide.id}
                     className={`absolute inset-0 transition-opacity duration-1000 ${
-                        index === currentSlide ? "opacity-100" : "opacity-0"
+                        slide.id === currentSlide ? "opacity-100" : "opacity-0"
                     }`}
+                    style={{ backgroundImage: `url(${slide.image})` }}
                 >
-                    {/* Background Image */}
-                    <div
-                        className="absolute inset-0 bg-cover bg-center"
-                        style={{ backgroundImage: `url(${slide.image})` }}
-                    >
-                        <div className="from-background/90 via-background/70 bg-card absolute inset-0 to-transparent" />
-                    </div>
-
                     {/* Content */}
                     <div className="relative container mx-auto flex h-full items-center px-4">
                         <div className="max-w-2xl">
-                            <h1 className="font-title text-foreground mb-6 text-4xl leading-tight font-bold md:text-5xl lg:text-6xl">
+                            <h1 className="font-title mb-6 text-4xl leading-tight font-bold text-white md:text-5xl lg:text-6xl">
                                 {slide.title}
                             </h1>
-                            <p className="text-muted-foreground mb-8 text-lg md:text-xl">
-                                {slide.subtitle}
-                            </p>
+                            <p className="mb-8 text-lg text-white md:text-xl">{slide.subtitle}</p>
                             <Button asChild size="lg" className="px-8 text-lg">
                                 <Link href={slide.link}>{slide.cta}</Link>
                             </Button>
@@ -84,13 +86,14 @@ export function HeroSection() {
             {/* Navigation Arrows */}
             <button
                 onClick={prevSlide}
-                className="bg-background/80 hover:bg-background absolute top-1/2 left-4 -translate-y-1/2 rounded-full p-2 transition-colors"
+                className="bg-background/80 hover:bg-background absolute top-1/2 left-4 hidden -translate-y-1/2 rounded-full p-2 transition-colors lg:block"
             >
                 <ChevronLeft className="h-6 w-6" />
             </button>
+
             <button
                 onClick={nextSlide}
-                className="bg-background/80 hover:bg-background absolute top-1/2 right-4 -translate-y-1/2 rounded-full p-2 transition-colors"
+                className="bg-background/80 hover:bg-background absolute top-1/2 right-4 hidden -translate-y-1/2 rounded-full p-2 transition-colors lg:block"
             >
                 <ChevronRight className="h-6 w-6" />
             </button>

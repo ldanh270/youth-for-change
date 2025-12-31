@@ -1,3 +1,5 @@
+import Header from "#/layouts/Header"
+
 import type { Metadata } from "next"
 import { ThemeProvider } from "next-themes"
 import { Geist, Geist_Mono, Montserrat } from "next/font/google"
@@ -40,8 +42,11 @@ export default function RootLayout({
                     enableSystem
                     disableTransitionOnChange
                 >
-                    {children}
-                </ThemeProvider>{" "}
+                    <div className="flex min-h-screen flex-col">
+                        <Header variant="hero" />
+                        {children}
+                    </div>
+                </ThemeProvider>
             </body>
         </html>
     )

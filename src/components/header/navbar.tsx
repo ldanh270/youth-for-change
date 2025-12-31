@@ -99,14 +99,18 @@ export default function Navbar({ className }: { className?: string }) {
     return (
         <div className={`${className}`}>
             {/* Desktop navigation */}
-            <NavigationMenu className="hidden md:flex">
+            <NavigationMenu className="hidden lg:flex">
                 <NavigationMenuList>
                     {navElements.map(({ name, link, childs }) => {
                         return childs ? (
                             <NavigationMenuItem key={name}>
-                                <NavigationMenuTrigger>{name}</NavigationMenuTrigger>
+                                <NavigationMenuTrigger>
+                                    <NavigationMenuLink asChild>
+                                        <Link href={link}>{name}</Link>
+                                    </NavigationMenuLink>
+                                </NavigationMenuTrigger>
                                 <NavigationMenuContent>
-                                    <ul className="grid w-150 gap-3 p-4 md:grid-cols-3">
+                                    <ul className="grid w-150 gap-3 p-4 lg:grid-cols-3">
                                         {childs.map(
                                             ({ name, link, description }: NavElementType) => (
                                                 <li key={name}>
@@ -134,7 +138,7 @@ export default function Navbar({ className }: { className?: string }) {
                                 <NavigationMenuLink asChild>
                                     <Link
                                         href={link}
-                                        className="group bg-background hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none"
+                                        className="group hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none"
                                     >
                                         {name}
                                     </Link>
@@ -147,14 +151,14 @@ export default function Navbar({ className }: { className?: string }) {
 
             {/* Mobile menu */}
             <Sheet>
-                <SheetTrigger asChild className="md:hidden">
+                <SheetTrigger asChild className="lg:hidden">
                     <Button variant="ghost" size="icon">
                         <Menu className="h-5 w-5" />
                     </Button>
                 </SheetTrigger>
                 <SheetContent
                     side="right"
-                    className="flex h-full w-full flex-col justify-between pt-5 md:hidden"
+                    className="flex h-full w-full flex-col justify-between pt-5 lg:hidden"
                 >
                     <SheetTitle className="hidden" />
                     <Accordion type="single" collapsible className="pt-5">

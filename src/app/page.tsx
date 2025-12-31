@@ -1,16 +1,14 @@
-import { CTASection } from "#/components/landing/CTASection"
-import { FeaturedProjects } from "#/components/landing/FeaturedProjects"
-import { HeroSection } from "#/components/landing/HeroSection"
-import { NewsSection } from "#/components/landing/NewsSection"
-import { SDGShowcase } from "#/components/landing/SDGShowcase"
-import { StatsSection } from "#/components/landing/StatsSection"
+import { CTASection } from "#/components/home/CTASection"
+import { FeaturedProjects } from "#/components/home/FeaturedProjects"
+import { HeroSection } from "#/components/home/HeroSection"
+import { NewsSection } from "#/components/home/NewsSection"
+import { SDGShowcase } from "#/components/home/SDGShowcase"
+import { StatsSection } from "#/components/home/StatsSection"
 import Footer from "#/layouts/Footer"
-import Header from "#/layouts/Header"
 
 export default function Home() {
     return (
-        <div className="flex min-h-screen flex-col">
-            <Header />
+        <>
             <main className="flex-1">
                 <HeroSection />
                 <SDGShowcase />
@@ -20,6 +18,6 @@ export default function Home() {
                 <CTASection />
             </main>
             <Footer />
-        </div>
+        </>
     )
 }
