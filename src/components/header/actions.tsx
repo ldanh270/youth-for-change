@@ -1,3 +1,4 @@
+import { ModeToggle } from "#/components/themes/mode-toggle"
 import { Button } from "#/components/ui/button"
 
 import { Globe, Search } from "lucide-react"
@@ -10,6 +11,9 @@ export default function ActionButtions({ className }: { className?: string }) {
             <Button variant="ghost" size="icon">
                 <Search className="h-5 w-5" />
             </Button>
+
+            {/* Theme */}
+            <ModeToggle />
 
             {/* Language */}
             <Button variant="ghost" size="icon">

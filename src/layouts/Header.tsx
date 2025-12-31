@@ -1,5 +1,3 @@
-"use client"
-
 import ActionButtions from "#/components/header/actions"
 import Navbar from "#/components/header/navbar"
 
