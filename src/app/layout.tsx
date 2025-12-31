@@ -44,7 +44,7 @@ export default function RootLayout({
                 >
                     <div className="flex min-h-screen flex-col">
                         <Header variant="hero" />
-                        {children}
+                        <div>{children}</div>
                     </div>
                 </ThemeProvider>
             </body>

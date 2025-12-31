@@ -8,7 +8,7 @@ import Footer from "#/layouts/Footer"
 
 export default function Home() {
     return (
-        <>
+        <div className="hide-scrollbar">
             <main className="flex-1">
                 <HeroSection />
                 <SDGShowcase />
@@ -18,6 +18,6 @@ export default function Home() {
                 <CTASection />
             </main>
             <Footer />
-        </>
+        </div>
     )
 }
