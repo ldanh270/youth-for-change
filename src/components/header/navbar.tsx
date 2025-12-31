@@ -1,3 +1,6 @@
+import ActionButtions from "#/components/header/actions"
+import { Accordion, AccordionItem, AccordionTrigger } from "#/components/ui/accordion"
+import { Button } from "#/components/ui/button"
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -6,7 +9,10 @@ import {
     NavigationMenuList,
     NavigationMenuTrigger,
 } from "#/components/ui/navigation-menu"
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "#/components/ui/sheet"
 
+import { AccordionContent } from "@radix-ui/react-accordion"
+import { Menu } from "lucide-react"
 import Link from "next/link"
 
 type NavElementType = {
@@ -92,7 +98,8 @@ const navElements: NavElementType[] = [
 export default function Navbar({ className }: { className?: string }) {
     return (
         <div className={`${className}`}>
-            <NavigationMenu>
+            {/* Desktop navigation */}
+            <NavigationMenu className="hidden md:flex">
                 <NavigationMenuList>
                     {navElements.map(({ name, link, childs }) => {
                         return childs ? (
@@ -123,7 +130,7 @@ export default function Navbar({ className }: { className?: string }) {
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
                         ) : (
-                            <NavigationMenuItem>
+                            <NavigationMenuItem key={name}>
                                 <NavigationMenuLink asChild>
                                     <Link
                                         href={link}
@@ -137,6 +144,61 @@ export default function Navbar({ className }: { className?: string }) {
                     })}
                 </NavigationMenuList>
             </NavigationMenu>
+
+            {/* Mobile menu */}
+            <Sheet>
+                <SheetTrigger asChild className="md:hidden">
+                    <Button variant="ghost" size="icon">
+                        <Menu className="h-5 w-5" />
+                    </Button>
+                </SheetTrigger>
+                <SheetContent
+                    side="right"
+                    className="flex h-full w-full flex-col justify-between pt-5 md:hidden"
+                >
+                    <SheetTitle className="hidden" />
+                    <Accordion type="single" collapsible className="pt-5">
+                        {navElements.map(({ name, link, childs }) => {
+                            return childs ? (
+                                <AccordionItem value={name} key={name}>
+                                    <AccordionTrigger>{name}</AccordionTrigger>
+                                    <AccordionContent>
+                                        <ul className="bg-sidebar w-full gap-3 py-4">
+                                            {childs.map(
+                                                ({ name, link, description }: NavElementType) => (
+                                                    <li key={name}>
+                                                        <Link
+                                                            href={`${link}`}
+                                                            className="hover:bg-accent hover:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none"
+                                                        >
+                                                            <div className="text-sm leading-none font-medium">
+                                                                {name}
+                                                            </div>
+                                                            <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
+                                                                {description}
+                                                            </p>
+                                                        </Link>
+                                                    </li>
+                                                ),
+                                            )}
+                                        </ul>
+                                    </AccordionContent>
+                                </AccordionItem>
+                            ) : (
+                                <AccordionItem value={name} key={name}>
+                                    <Link
+                                        href={link}
+                                        className="group bg-background hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground inline-flex w-150 items-center gap-3 rounded-md py-4 text-sm font-medium transition-colors focus:outline-none md:grid-cols-3"
+                                    >
+                                        {name}
+                                    </Link>
+                                </AccordionItem>
+                            )
+                        })}
+                    </Accordion>
+                    <ActionButtions className="ml-auto" />
+                </SheetContent>
+            </Sheet>
         </div>
     )
 }
