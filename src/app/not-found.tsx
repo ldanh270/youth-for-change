@@ -9,7 +9,7 @@ import Link from "next/link"
 export default function MovieNotFound() {
     return (
         <>
-            <Header />
+            <Header variant="solid" />
             <main className="h-fit">
                 {/* 404 Content */}
                 <section className="container mx-auto px-4 py-20 md:px-8">

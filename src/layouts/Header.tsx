@@ -4,12 +4,19 @@ import { cn } from "#/lib/utils"
 
 import Link from "next/link"
 
-export default function Header({ variant = "default" }: { variant?: "default" | "hero" }) {
+export default function Header({
+    variant,
+    className,
+}: {
+    variant?: "solid" | "transparent"
+    className?: string
+}) {
     return (
         <header
             className={cn(
-                "hover:bg-background absolute top-0 z-50 w-full bg-transparent",
-                variant === "hero" ? "not-hover:text-background" : "text-foreground",
+                "bg-background absolute top-0 z-40 w-full",
+                variant === "solid" ? "bg-background" : "text-foreground not-hover:bg-transparent",
+                className,
             )}
         >
             <div className="container mx-auto flex h-16 items-center justify-between px-4">

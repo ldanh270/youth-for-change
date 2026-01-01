@@ -10,7 +10,7 @@ import Header from "#/layouts/Header"
 export default function Home() {
     return (
         <div className="hide-scrollbar">
-            <Header variant="hero" />
+            <Header variant="transparent" className="z-40" />
             <main className="flex-1">
                 <HeroSection />
                 <SDGShowcase />

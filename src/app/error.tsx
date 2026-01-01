@@ -22,7 +22,7 @@ export default function GlobalError({
 
     return (
         <>
-            <Header />
+            <Header variant="solid" />
             <main className="container mx-auto flex min-h-[50vh] flex-col items-center justify-center px-4 py-20">
                 <div className="mx-auto max-w-2xl space-y-6 text-center">
                     <div className="bg-destructive/10 mx-auto flex h-20 w-20 items-center justify-center rounded-full">

@@ -1,3 +1,5 @@
+import StickyHeader from "#/layouts/sticky-header"
+
 import type { Metadata } from "next"
 import { ThemeProvider } from "next-themes"
 import { Geist, Geist_Mono, Montserrat } from "next/font/google"
@@ -41,7 +43,8 @@ export default function RootLayout({
                     disableTransitionOnChange
                 >
                     <div className="flex min-h-screen flex-col">
-                        <div>{children}</div>
+                        <StickyHeader />
+                        {children}
                     </div>
                 </ThemeProvider>
             </body>
