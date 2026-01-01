@@ -5,7 +5,11 @@
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
+/**
+* Declare "Design tokens"
+* Include style for animations, colors, fonts, spacing, ...
+*/
+@theme {
     /* --- Fonts --- */
     --font-title: var(--font-montserrat);
     --font-sans: var(--font-geist-sans);
@@ -106,6 +110,71 @@
     --radius-2xl: calc(var(--radius) + 8px);
     --radius-3xl: calc(var(--radius) + 12px);
     --radius-4xl: calc(var(--radius) + 16px);
+
+    /* --- Animations --- */
+    /* 1. FADE IN
+        - Action: Simply fades from invisible to visible.
+        - Best for: Hero images, background elements.
+    */
+    --animate-fade-in: fade-in 0.6s ease-out forwards;
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    /* 2. FADE IN UP
+        - Action: Slides up slightly (20px) while fading in.
+        - Best for: Cards, list items, features (Staggered effects).
+    */
+    --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
+
+    @keyframes fade-in-up {
+        0% {
+            opacity: 0;
+            transform: translateY(20px); /* Subtle 20px lift */
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* 3. ZOOM IN (SCALE)
+        - Action: Scales from 95% to 100% with opacity.
+        - Best for: Modals, Dialogs, Popups (Natural physical feel).
+    */
+    --animate-zoom-in: zoom-in 0.3s ease-out forwards;
+
+    @keyframes zoom-in {
+        0% {
+            opacity: 0;
+            transform: scale(0.95); /* Starts slightly smaller */
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* 4. PROGRESS BAR
+        - Action: Expands width from 0 to 100%.
+        - Important: MUST add `origin-left` class in HTML.
+    */
+    --animate-progress: progress 2s linear forwards;
+
+    @keyframes progress {
+        0% {
+            transform: scaleX(0);
+        }
+        100% {
+            transform: scaleX(1);
+        }
+    }
 }
 
 :root {
@@ -255,12 +324,21 @@
     --sidebar-ring: oklch(0.72 0.16 150);
 }
 
+/**
+* Reset style for HTML tags (Reset CSS)
+* Include default styles for h1, h2, h3, p, body, ...
+*/
 @layer base {
     * {
         @apply border-border outline-ring/50;
     }
     body {
         @apply bg-background text-foreground;
+    }
+
+    /* Apply smooth scrolling for the whole page */
+    html {
+        scroll-behavior: smooth;
     }
 
     /* Hide scrollbar globally */
@@ -275,6 +353,10 @@
     }
 }
 
+/**
+* Custom utilty classes for app
+* Include custom style such as hide scrollbar, global custom colors, text shadow, ...
+*/
 @layer utilities {
     /* Hide scrollbar for Chrome, Safari and Opera */
     .hide-scrollbar::-webkit-scrollbar {
@@ -285,48 +367,6 @@
     .hide-scrollbar {
         -ms-overflow-style: none; /* IE and Edge */
         scrollbar-width: none; /* Firefox */
-    }
-
-    /* Fade in animation */
-    @keyframes fade-in {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-
-    @keyframes fade-in-up {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes progress {
-        from {
-            transform: scaleX(0);
-        }
-        to {
-            transform: scaleX(1);
-        }
-    }
-
-    .animate-fade-in {
-        animation: fade-in 0.8s ease-out;
-    }
-
-    .animate-fade-in-up {
-        animation: fade-in-up 0.8s ease-out;
-    }
-
-    .animate-progress {
-        animation: progress linear;
     }
 
     /* SDG Background Utilities */
