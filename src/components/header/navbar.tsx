@@ -106,7 +106,12 @@ export default function Navbar({ className }: { className?: string }) {
                             <NavigationMenuItem key={name}>
                                 <NavigationMenuTrigger>
                                     <NavigationMenuLink asChild>
-                                        <Link href={link}>{name}</Link>
+                                        <Link
+                                            href={link}
+                                            className="from-primary to-primary group relative inline-flex h-10 w-max items-center justify-center rounded-md bg-linear-to-r bg-size-[0%_2px] bg-bottom bg-no-repeat py-2 pb-1 text-sm font-medium transition-all duration-300 select-none hover:bg-size-[50%_2px] focus:outline-none"
+                                        >
+                                            {name}
+                                        </Link>
                                     </NavigationMenuLink>
                                 </NavigationMenuTrigger>
                                 <NavigationMenuContent>
@@ -117,7 +122,7 @@ export default function Navbar({ className }: { className?: string }) {
                                                     <NavigationMenuLink asChild>
                                                         <Link
                                                             href={`${link}`}
-                                                            className="hover:bg-accent hover:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none"
+                                                            className="hover:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none"
                                                         >
                                                             <div className="text-sm leading-none font-medium">
                                                                 {name}
@@ -134,12 +139,12 @@ export default function Navbar({ className }: { className?: string }) {
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
                         ) : (
-                            <NavigationMenuItem key={name}>
+                            <NavigationMenuItem
+                                key={name}
+                                className="from-primary to-primary group hover:text-accent-foreground relative inline-flex h-10 w-max items-center justify-center rounded-md bg-linear-to-r bg-size-[0%_2px] bg-bottom bg-no-repeat px-4 py-2 pb-1 text-sm font-medium transition-all duration-300 select-none hover:bg-size-[50%_2px] focus:outline-none"
+                            >
                                 <NavigationMenuLink asChild>
-                                    <Link
-                                        href={link}
-                                        className="group hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none"
-                                    >
+                                    <Link href={link} className="">
                                         {name}
                                     </Link>
                                 </NavigationMenuLink>

@@ -33,6 +33,7 @@ export default function StickyHeader() {
                     visible: { y: 0, opacity: 1 },
                     hidden: { y: -100, opacity: 1 },
                 }}
+                initial="hidden"
                 animate={hidden ? "hidden" : "visible"}
                 // Transition (animation) for header
                 transition={{

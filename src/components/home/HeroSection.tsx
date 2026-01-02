@@ -1,6 +1,7 @@
 "use client"
 
 import { Button } from "#/components/ui/button"
+import { cn } from "#/lib/utils"
 
 import { useEffect, useState } from "react"
 
@@ -34,7 +35,7 @@ const slides = [
     },
 ]
 
-export function HeroSection() {
+export function HeroSection({ className }: { className?: string }) {
     const [currentSlide, setCurrentSlide] = useState(0)
 
     useEffect(() => {
@@ -59,7 +60,7 @@ export function HeroSection() {
         })
 
     return (
-        <section className="relative h-screen w-full">
+        <section className={cn("relative h-screen w-full", className)}>
             {slides.map((slide) => (
                 <div
                     key={slide.id}

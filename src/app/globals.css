@@ -112,11 +112,11 @@
     --radius-4xl: calc(var(--radius) + 16px);
 
     /* --- Animations --- */
-    /* 1. FADE IN
+    /* FADE IN
         - Action: Simply fades from invisible to visible.
         - Best for: Hero images, background elements.
     */
-    --animate-fade-in: fade-in 0.6s ease-out forwards;
+    --animate-fade-in: fade-in 1s ease-out forwards;
 
     @keyframes fade-in {
         0% {
@@ -127,11 +127,11 @@
         }
     }
 
-    /* 2. FADE IN UP
+    /* FADE IN UP
         - Action: Slides up slightly (20px) while fading in.
         - Best for: Cards, list items, features (Staggered effects).
     */
-    --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
+    --animate-fade-in-up: fade-in-up 1s ease-out forwards;
 
     @keyframes fade-in-up {
         0% {
@@ -143,8 +143,23 @@
             transform: translateY(0);
         }
     }
+    /* FADE IN DOWN
+        - Action: Slides down slightly (20px) while fading in.
+    */
+    --animate-fade-in-down: fade-in-down 1s ease-out forwards;
 
-    /* 3. ZOOM IN (SCALE)
+    @keyframes fade-in-down {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px); /* Subtle 50px lift */
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* ZOOM IN (SCALE)
         - Action: Scales from 95% to 100% with opacity.
         - Best for: Modals, Dialogs, Popups (Natural physical feel).
     */
@@ -161,7 +176,7 @@
         }
     }
 
-    /* 4. PROGRESS BAR
+    /* PROGRESS BAR
         - Action: Expands width from 0 to 100%.
         - Important: MUST add `origin-left` class in HTML.
     */
