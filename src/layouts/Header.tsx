@@ -20,7 +20,7 @@ export default function Header({
                 className,
             )}
         >
-            <div className="container mx-auto flex h-16 items-center justify-between px-4">
+            <div className="container mx-auto flex h-16 items-center justify-between px-4 py-10">
                 {/* Logo */}
                 <Link href="/" className="flex flex-1 items-center space-x-2 lg:flex-initial">
                     <Image src={"/logo.png"} alt="Logo image" width={60} height={60} />
