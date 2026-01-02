@@ -1,4 +1,3 @@
-import { CTASection } from "#/components/home/CTASection"
 import { FeaturedProjects } from "#/components/home/FeaturedProjects"
 import { HeroSection } from "#/components/home/HeroSection"
 import { NewsSection } from "#/components/home/NewsSection"
@@ -17,7 +16,6 @@ export default function Home() {
                 <FeaturedProjects />
                 <StatsSection />
                 <NewsSection />
-                <CTASection />
             </main>
             <Footer />
         </div>
