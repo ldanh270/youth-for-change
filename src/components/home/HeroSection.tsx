@@ -60,12 +60,14 @@ export function HeroSection({ className }: { className?: string }) {
         })
 
     return (
-        <section className={cn("relative h-screen w-full", className)}>
+        <section className={cn("relative h-screen w-screen", className)}>
             {slides.map((slide) => (
                 <div
                     key={slide.id}
-                    className={`absolute inset-0 transition-opacity duration-1000 ${
-                        slide.id === currentSlide ? "opacity-100" : "opacity-0"
+                    className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ${
+                        slide.id === currentSlide
+                            ? "pointer-events-auto opacity-100"
+                            : "pointer-events-none opacity-0"
                     }`}
                     style={{ backgroundImage: `url(${slide.image})` }}
                 >
