@@ -23,6 +23,7 @@ type NavElementType = {
 }
 
 const navElements: NavElementType[] = [
+    { name: "SDGs", link: "/sdgs" },
     {
         name: "About Us",
         link: "/about",
@@ -92,7 +93,6 @@ const navElements: NavElementType[] = [
         ],
     },
     { name: "News", link: "/news" },
-    { name: "Contacts", link: "/contacts" },
 ]
 
 export default function Navbar({ className }: { className?: string }) {
