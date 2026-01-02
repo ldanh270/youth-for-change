@@ -1,26 +1,439 @@
 @import "tailwindcss";
 
-:root {
-    --background: #ffffff;
-    --foreground: #171717;
-}
+@plugin "tailwindcss-animate";
+@import "tw-animate-css";
 
-@theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
+@custom-variant dark (&:is(.dark *));
+
+/**
+* Declare "Design tokens"
+* Include style for animations, colors, fonts, spacing, ...
+*/
+@theme {
+    /* --- Fonts --- */
+    --font-title: var(--font-montserrat);
     --font-sans: var(--font-geist-sans);
     --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
+    /* --- Colors --- */
+
+    /* Main */
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+
+    /* Card */
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+
+    /* Primary */
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+
+    /* Secondary */
+    --color-secondary: var(--secondary);
+    --color-secondary-foreground: var(--secondary-foreground);
+
+    /* Accent */
+    --color-accent: var(--accent);
+    --color-accent-foreground: var(--accent-foreground);
+
+    /* Popover */
+    --color-popover: var(--popover);
+    --color-popover-foreground: var(--popover-foreground);
+
+    /* Muted */
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+
+    /* Layout */
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-ring: var(--ring);
+
+    /* Status */
+    --color-success: var(--success);
+    --color-success-foreground: var(--success-foreground);
+
+    --color-info: var(--info);
+    --color-info-foreground: var(--info-foreground);
+
+    --color-warning: var(--warning);
+    --color-warning-foreground: var(--warning-foreground);
+
+    --color-destructive: var(--destructive);
+    --color-destructive-foreground: var(--destructive-foreground);
+
+    /* Sidebar */
+    --color-sidebar: var(--sidebar);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+
+    /* Charts */
+    --color-chart-1: var(--chart-1);
+    --color-chart-2: var(--chart-2);
+    --color-chart-3: var(--chart-3);
+    --color-chart-4: var(--chart-4);
+    --color-chart-5: var(--chart-5);
+
+    /* --- 17 SDGs Integration --- */
+    --color-sdg-1: var(--sdg-1);
+    --color-sdg-2: var(--sdg-2);
+    --color-sdg-3: var(--sdg-3);
+    --color-sdg-4: var(--sdg-4);
+    --color-sdg-5: var(--sdg-5);
+    --color-sdg-6: var(--sdg-6);
+    --color-sdg-7: var(--sdg-7);
+    --color-sdg-8: var(--sdg-8);
+    --color-sdg-9: var(--sdg-9);
+    --color-sdg-10: var(--sdg-10);
+    --color-sdg-11: var(--sdg-11);
+    --color-sdg-12: var(--sdg-12);
+    --color-sdg-13: var(--sdg-13);
+    --color-sdg-14: var(--sdg-14);
+    --color-sdg-15: var(--sdg-15);
+    --color-sdg-16: var(--sdg-16);
+    --color-sdg-17: var(--sdg-17);
+
+    /* --- Radius --- */
+    --radius-sm: calc(var(--radius) - 4px);
+    --radius-md: calc(var(--radius) - 2px);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) + 4px);
+    --radius-2xl: calc(var(--radius) + 8px);
+    --radius-3xl: calc(var(--radius) + 12px);
+    --radius-4xl: calc(var(--radius) + 16px);
+
+    /* --- Animations --- */
+    /* FADE IN
+        - Action: Simply fades from invisible to visible.
+        - Best for: Hero images, background elements.
+    */
+    --animate-fade-in: fade-in 1s ease-out forwards;
+
+    @keyframes fade-in {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    /* FADE IN UP
+        - Action: Slides up slightly (20px) while fading in.
+        - Best for: Cards, list items, features (Staggered effects).
+    */
+    --animate-fade-in-up: fade-in-up 1s ease-out forwards;
+
+    @keyframes fade-in-up {
+        0% {
+            opacity: 0;
+            transform: translateY(20px); /* Subtle 20px lift */
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    /* FADE IN DOWN
+        - Action: Slides down slightly (20px) while fading in.
+    */
+    --animate-fade-in-down: fade-in-down 1s ease-out forwards;
+
+    @keyframes fade-in-down {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px); /* Subtle 50px lift */
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* ZOOM IN (SCALE)
+        - Action: Scales from 95% to 100% with opacity.
+        - Best for: Modals, Dialogs, Popups (Natural physical feel).
+    */
+    --animate-zoom-in: zoom-in 0.3s ease-out forwards;
+
+    @keyframes zoom-in {
+        0% {
+            opacity: 0;
+            transform: scale(0.95); /* Starts slightly smaller */
+        }
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* PROGRESS BAR
+        - Action: Expands width from 0 to 100%.
+        - Important: MUST add `origin-left` class in HTML.
+    */
+    --animate-progress: progress 2s linear forwards;
+
+    @keyframes progress {
+        0% {
+            transform: scaleX(0);
+        }
+        100% {
+            transform: scaleX(1);
+        }
     }
 }
 
-body {
-    background: var(--background);
-    color: var(--foreground);
-    font-family: Arial, Helvetica, sans-serif;
+:root {
+    /* --- LIGHT MODE --- */
+
+    /* BACKGROUND */
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.2 0.04 250);
+
+    /* CARD */
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.2 0.04 250);
+
+    /* POPOVER */
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.2 0.04 250);
+
+    /* PRIMARY */
+    --primary: oklch(0.4 0.12 250);
+    --primary-foreground: oklch(0.98 0 0);
+
+    /* SECONDARY*/
+    --secondary: oklch(0.96 0.01 250);
+    --secondary-foreground: oklch(0.2 0.04 250);
+
+    /* MUTED */
+    --muted: oklch(0.96 0.01 250);
+    --muted-foreground: oklch(0.55 0.03 250);
+
+    /* ACCENT */
+    --accent: oklch(0.96 0.01 250);
+    --accent-foreground: oklch(0.4 0.12 250);
+
+    /* LAYOUT */
+    --input: oklch(0.92 0.01 250);
+    --border: oklch(0.92 0.01 250);
+
+    /* STATUS */
+    --success: oklch(0.72 0.16 150);
+    --success-foreground: oklch(0.98 0 0);
+
+    --warning: oklch(0.769 0.188 70.08);
+    --warning-foreground: oklch(0.2 0.04 250);
+
+    --info: oklch(0.7 0.14 240);
+    --info-foreground: oklch(0.98 0 0);
+
+    --destructive: oklch(0.577 0.245 27.325);
+    --destructive-foreground: oklch(0.98 0 0);
+
+    /* RING */
+    --ring: oklch(0.72 0.16 150);
+
+    /* --- SIDEBAR --- */
+    --sidebar: oklch(0.98 0.005 250);
+    --sidebar-foreground: oklch(0.2 0.04 250);
+
+    --sidebar-primary: oklch(0.4 0.12 250);
+    --sidebar-primary-foreground: oklch(0.98 0 0);
+
+    --sidebar-accent: oklch(0.95 0.01 250);
+    --sidebar-accent-foreground: oklch(0.2 0.04 250);
+
+    --sidebar-border: oklch(0.92 0.01 250);
+    --sidebar-ring: oklch(0.72 0.16 150);
+
+    /* --- 17 SDGs Colors --- */
+    --sdg-1: #e5243b;
+    --sdg-2: #dda63a;
+    --sdg-3: #4c9f38;
+    --sdg-4: #c5192d;
+    --sdg-5: #ff3a21;
+    --sdg-6: #26bde2;
+    --sdg-7: #fcc30b;
+    --sdg-8: #a21942;
+    --sdg-9: #fd6925;
+    --sdg-10: #dd1367;
+    --sdg-11: #fd9d24;
+    --sdg-12: #bf8b2e;
+    --sdg-13: #3f7e44;
+    --sdg-14: #0a97d9;
+    --sdg-15: #56c02b;
+    --sdg-16: #00689d;
+    --sdg-17: #19486a;
+
+    /* Chart Colors */
+    --chart-1: oklch(0.4 0.12 250);
+    --chart-2: oklch(0.72 0.16 150);
+    --chart-3: oklch(0.398 0.07 227.392);
+    --chart-4: oklch(0.828 0.189 84.429);
+    --chart-5: oklch(0.769 0.188 70.08);
+
+    /* Default Radius */
+    --radius: 0.625rem;
+}
+
+.dark {
+    /* --- DARK MODE --- */
+
+    /* BACKGROUND */
+    --background: oklch(0.15 0.04 250);
+    --foreground: oklch(0.98 0.003 247.858);
+
+    /* CARD */
+    --card: oklch(0.18 0.04 250);
+    --card-foreground: oklch(0.98 0.003 247.858);
+
+    /* PRIMARY */
+    --primary: oklch(0.55 0.13 250);
+    --primary-foreground: oklch(0.98 0 0);
+
+    /* SECONDARY */
+    --secondary: oklch(0.25 0.04 250);
+    --secondary-foreground: oklch(0.98 0 0);
+
+    /* ACCENT */
+    --accent: oklch(0.25 0.04 250);
+    --accent-foreground: oklch(0.98 0 0);
+
+    /* POPOVER */
+    --popover: oklch(0.18 0.04 250);
+    --popover-foreground: oklch(0.98 0.003 247.858);
+
+    /* MUTED */
+    --muted: oklch(0.25 0.04 250);
+    --muted-foreground: oklch(0.7 0.04 250);
+
+    /* STATUS */
+    --destructive: oklch(0.704 0.191 22.216);
+
+    /* LAYOUT */
+    --input: oklch(0.25 0.04 250);
+    --border: oklch(0.25 0.04 250);
+    --ring: oklch(0.72 0.16 150);
+
+    /* --- SIDEBAR --- */
+    --sidebar: oklch(0.15 0.04 250);
+    --sidebar-foreground: oklch(0.98 0.003 247.858);
+
+    --sidebar-primary: oklch(0.55 0.13 250);
+    --sidebar-primary-foreground: oklch(0.98 0 0);
+
+    --sidebar-accent: oklch(0.25 0.04 250);
+    --sidebar-accent-foreground: oklch(0.98 0.003 247.858);
+
+    --sidebar-border: oklch(0.25 0.04 250);
+    --sidebar-ring: oklch(0.72 0.16 150);
+}
+
+/**
+* Reset style for HTML tags (Reset CSS)
+* Include default styles for h1, h2, h3, p, body, ...
+*/
+@layer base {
+    * {
+        @apply border-border outline-ring/50;
+    }
+    body {
+        @apply bg-background text-foreground;
+    }
+
+    /* Apply smooth scrolling for the whole page */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Hide scrollbar globally */
+    html,
+    body {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/**
+* Custom utilty classes for app
+* Include custom style such as hide scrollbar, global custom colors, text shadow, ...
+*/
+@layer utilities {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    .hide-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    /* SDG Background Utilities */
+    .bg-sdg-1 {
+        background-color: var(--sdg-1);
+    }
+    .bg-sdg-2 {
+        background-color: var(--sdg-2);
+    }
+    .bg-sdg-3 {
+        background-color: var(--sdg-3);
+    }
+    .bg-sdg-4 {
+        background-color: var(--sdg-4);
+    }
+    .bg-sdg-5 {
+        background-color: var(--sdg-5);
+    }
+    .bg-sdg-6 {
+        background-color: var(--sdg-6);
+    }
+    .bg-sdg-7 {
+        background-color: var(--sdg-7);
+    }
+    .bg-sdg-8 {
+        background-color: var(--sdg-8);
+    }
+    .bg-sdg-9 {
+        background-color: var(--sdg-9);
+    }
+    .bg-sdg-10 {
+        background-color: var(--sdg-10);
+    }
+    .bg-sdg-11 {
+        background-color: var(--sdg-11);
+    }
+    .bg-sdg-12 {
+        background-color: var(--sdg-12);
+    }
+    .bg-sdg-13 {
+        background-color: var(--sdg-13);
+    }
+    .bg-sdg-14 {
+        background-color: var(--sdg-14);
+    }
+    .bg-sdg-15 {
+        background-color: var(--sdg-15);
+    }
+    .bg-sdg-16 {
+        background-color: var(--sdg-16);
+    }
+    .bg-sdg-17 {
+        background-color: var(--sdg-17);
+    }
 }
