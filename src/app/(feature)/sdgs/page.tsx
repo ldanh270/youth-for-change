@@ -176,6 +176,7 @@ export default function SDGInfo() {
     return (
         <div className="from-background via-card to-background min-h-screen bg-linear-to-br">
             <div className="container mx-auto px-4 py-16">
+                {/* Title */}
                 <motion.div
                     initial={{ opacity: 0, y: -30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -186,11 +187,11 @@ export default function SDGInfo() {
                         initial={{ scale: 0.9 }}
                         animate={{ scale: 1 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="from-primary to-accent text-primary-foreground mb-6 inline-block rounded-full bg-linear-to-r px-6 py-2 text-sm font-semibold shadow-lg"
+                        className="from-sdg-14 to-sdg-15 text-primary-foreground mb-6 inline-block rounded-full bg-linear-to-r px-6 py-2 text-sm font-semibold shadow-lg"
                     >
                         UN Sustainable Development Goals
                     </motion.div>
-                    <h1 className="from-foreground via-primary to-accent mb-6 bg-linear-to-r bg-clip-text text-5xl font-bold text-transparent md:text-6xl lg:text-7xl">
+                    <h1 className="from-sdg-14 to-sdg-3 lg:text-10xl mb-6 bg-linear-to-r bg-clip-text text-5xl font-bold text-transparent md:text-7xl">
                         17 Goals to Transform Our World
                     </h1>
                     <p className="text-muted-foreground mx-auto max-w-3xl text-lg leading-relaxed md:text-xl">
@@ -200,6 +201,7 @@ export default function SDGInfo() {
                     </p>
                 </motion.div>
 
+                {/* SDGs list */}
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"
