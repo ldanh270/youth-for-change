@@ -10,7 +10,7 @@ const sdgs = [
         title: "No Poverty",
         description:
             "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development.",
-        colorClass: "bg-sdg-1",
+        colorClass: "sdg-1",
         image: "/sdg/goal_1.svg",
     },
     {
@@ -18,7 +18,7 @@ const sdgs = [
         title: "Zero Hunger",
         description:
             "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development.",
-        colorClass: "bg-sdg-2",
+        colorClass: "sdg-2",
         image: "/sdg/goal_2.svg",
     },
     {
@@ -26,7 +26,7 @@ const sdgs = [
         title: "Good Health and Well-Being",
         description:
             "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development.",
-        colorClass: "bg-sdg-3",
+        colorClass: "sdg-3",
         image: "/sdg/goal_3.svg",
     },
     {
@@ -34,7 +34,7 @@ const sdgs = [
         title: "Quality Education",
         description:
             "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development.",
-        colorClass: "bg-sdg-4",
+        colorClass: "sdg-4",
         image: "/sdg/goal_4.svg",
     },
     {
@@ -42,7 +42,7 @@ const sdgs = [
         title: "Gender Equality",
         description:
             "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development.",
-        colorClass: "bg-sdg-5",
+        colorClass: "sdg-5",
         image: "/sdg/goal_5.svg",
     },
 
@@ -51,7 +51,7 @@ const sdgs = [
         title: "Clean Water and Sanitation",
         description:
             "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development.",
-        colorClass: "bg-sdg-6",
+        colorClass: "sdg-6",
         image: "/sdg/goal_6.svg",
     },
     {
@@ -59,7 +59,7 @@ const sdgs = [
         title: "Affordable and Clean Energy",
         description:
             "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development.",
-        colorClass: "bg-sdg-7",
+        colorClass: "sdg-7",
         image: "/sdg/goal_7.svg",
     },
     {
@@ -67,7 +67,7 @@ const sdgs = [
         title: "Decent Work and Economic Growth",
         description:
             "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development.",
-        colorClass: "bg-sdg-8",
+        colorClass: "sdg-8",
         image: "/sdg/goal_8.svg",
     },
     {
@@ -75,7 +75,7 @@ const sdgs = [
         title: "Industry, Innovation and Infrastructure",
         description:
             "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development.",
-        colorClass: "bg-sdg-9",
+        colorClass: "sdg-9",
         image: "/sdg/goal_9.svg",
     },
     {
@@ -83,7 +83,7 @@ const sdgs = [
         title: "Reduced Inequality",
         description:
             "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development.",
-        colorClass: "bg-sdg-10",
+        colorClass: "sdg-10",
         image: "/sdg/goal_10.svg",
     },
     {
@@ -91,7 +91,7 @@ const sdgs = [
         title: "Sustainable Cities and Communities",
         description:
             "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development.",
-        colorClass: "bg-sdg-11",
+        colorClass: "sdg-11",
         image: "/sdg/goal_11.svg",
     },
     {
@@ -99,7 +99,7 @@ const sdgs = [
         title: "Responsible Consumption and Production",
         description:
             "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development.",
-        colorClass: "bg-sdg-12",
+        colorClass: "sdg-12",
         image: "/sdg/goal_12.svg",
     },
     {
@@ -107,7 +107,7 @@ const sdgs = [
         title: "Climate Action",
         description:
             "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development.",
-        colorClass: "bg-sdg-13",
+        colorClass: "sdg-13",
         image: "/sdg/goal_13.svg",
     },
     {
@@ -115,7 +115,7 @@ const sdgs = [
         title: "Life Below Water",
         description:
             "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development.",
-        colorClass: "bg-sdg-14",
+        colorClass: "sdg-14",
         image: "/sdg/goal_14.svg",
     },
     {
@@ -123,7 +123,7 @@ const sdgs = [
         title: "Life on Land",
         description:
             "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development.",
-        colorClass: "bg-sdg-15",
+        colorClass: "sdg-15",
         image: "/sdg/goal_15.svg",
     },
     {
@@ -131,7 +131,7 @@ const sdgs = [
         title: "Peace, Justice and Strong Institutions",
         description:
             "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development.",
-        colorClass: "bg-sdg-16",
+        colorClass: "sdg-16",
         image: "/sdg/goal_16.svg",
     },
     {
@@ -139,7 +139,7 @@ const sdgs = [
         title: "Partnerships for the Goals",
         description:
             "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development.",
-        colorClass: "bg-sdg-17",
+        colorClass: "sdg-17",
         image: "/sdg/goal_17.svg",
     },
 ]

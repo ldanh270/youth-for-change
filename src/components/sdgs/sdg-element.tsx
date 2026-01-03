@@ -39,25 +39,19 @@ export default function SDGElement({ number, colorClass, title, description, ima
                     <div className="flex flex-col md:flex-row">
                         {/* Image Section */}
                         <motion.div
-                            className={`relative flex w-full items-center justify-center p-8 md:w-64 ${colorClass}`}
+                            className={`relative flex w-full items-center justify-center p-8 md:w-64 bg-${colorClass}`}
                             whileHover={{ scale: 1.02 }}
                             transition={{ duration: 0.3 }}
                             initial={{ opacity: 0, scale: 0.8 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                         >
-                            <Image
-                                src={image}
-                                alt="SDG Images"
-                                width={500}
-                                height={500}
-                                className=""
-                            />
+                            <Image src={image} alt="SDG Images" width={600} height={600} />
                         </motion.div>
 
                         {/* Content Section */}
                         <div className="flex flex-1 flex-col justify-center p-8">
                             <motion.h2
-                                className="text-foreground mb-4 text-2xl font-bold md:text-3xl"
+                                className={`text-foreground mb-4 text-2xl font-bold md:text-3xl`}
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
                                 transition={{ delay: 0.1 }}
@@ -81,18 +75,10 @@ export default function SDGElement({ number, colorClass, title, description, ima
                                 <motion.button
                                     whileHover={{ scale: 1.05, x: 5 }}
                                     whileTap={{ scale: 0.95 }}
-                                    className={`group/btn flex items-center gap-2 rounded-full ${colorClass} cursor-pointer px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl`}
+                                    className={`group/btn flex items-center gap-2 rounded-full bg-${colorClass} cursor-pointer px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl`}
                                 >
                                     <span>Learn More</span>
-                                    <motion.span
-                                        animate={{ x: [0, 5, 0] }}
-                                        transition={{
-                                            duration: 1.5,
-                                            repeat: Infinity,
-                                        }}
-                                    >
-                                        →
-                                    </motion.span>
+                                    <span className="pl-px">→</span>
                                 </motion.button>
                                 <motion.div
                                     whileHover={{ scale: 1.1 }}
