@@ -23,10 +23,10 @@ export default function GlobalError({
     return (
         <>
             <Header variant="solid" />
-            <main className="container mx-auto flex min-h-[50vh] flex-col items-center justify-center px-4 py-20">
+            <main className="container mx-auto flex flex-col items-center justify-center px-4 pt-20 pb-8">
                 <div className="mx-auto max-w-2xl space-y-6 text-center">
-                    <div className="bg-destructive/10 mx-auto flex h-20 w-20 items-center justify-center rounded-full">
-                        <AlertCircle className="text-destructive h-20 w-20" />
+                    <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full">
+                        <AlertCircle className="text-foreground h-20 w-20" />
                     </div>
 
                     <div className="space-y-2 select-none">
@@ -38,7 +38,7 @@ export default function GlobalError({
 
                     {error.message && (
                         <div className="bg-muted mx-auto max-w-lg rounded-lg p-4 text-left">
-                            <p className="wrap-break-words font-mono text-sm text-red-500">
+                            <p className="wrap-break-words text-destructive font-mono text-sm">
                                 {error.message}
                             </p>
                         </div>
