@@ -7,7 +7,7 @@ import Image from "next/image"
 
 interface ISDGElement {
     id: number
-    colorClass: string
+    color: string
     title: string
     description: string
     image: string
@@ -31,7 +31,7 @@ const itemVariants: Variants = {
     },
 }
 
-export default function SDGElement({ id, colorClass, title, description, image }: ISDGElement) {
+export default function SDGElement({ id, color, title, description, image }: ISDGElement) {
     return (
         <motion.div key={id} variants={itemVariants}>
             <Card className="group overflow-hidden border-0 shadow-md transition-all duration-500 hover:shadow-2xl">
@@ -39,7 +39,7 @@ export default function SDGElement({ id, colorClass, title, description, image }
                     <div className="flex flex-col md:flex-row">
                         {/* Image Section */}
                         <motion.div
-                            className={`relative flex w-full items-center justify-center p-8 md:w-64 bg-${colorClass}`}
+                            className={`relative flex w-full items-center justify-center p-8 md:w-64 bg-${color}`}
                             whileHover={{ scale: 1.02 }}
                             transition={{ duration: 0.3 }}
                             initial={{ opacity: 0, scale: 0.8 }}
@@ -75,7 +75,7 @@ export default function SDGElement({ id, colorClass, title, description, image }
                                 <motion.button
                                     whileHover={{ scale: 1.05, x: 5 }}
                                     whileTap={{ scale: 0.95 }}
-                                    className={`group/btn flex items-center gap-2 rounded-full bg-${colorClass} cursor-pointer px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl`}
+                                    className={`group/btn flex items-center gap-2 rounded-full bg-${color} cursor-pointer px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl`}
                                 >
                                     <span>Learn More</span>
                                     <span className="pl-px">→</span>

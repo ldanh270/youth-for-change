@@ -2,7 +2,7 @@
 
 import { Card } from "#/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem } from "#/components/ui/carousel"
-import { sdgs } from "#/configs/constants/sdgs"
+import { SDGs } from "#/configs/constants/sdgs"
 
 import { useRef } from "react"
 
@@ -45,7 +45,7 @@ export function SDGShowcase() {
                     }}
                 >
                     <CarouselContent className="my-2">
-                        {sdgs.map(({ id, color, image }) => (
+                        {SDGs.map(({ id, color, image }) => (
                             <CarouselItem
                                 key={id}
                                 className="basis-1/3 pl-4 md:basis-1/5 lg:basis-1/8"
