@@ -1,10 +1,10 @@
 import { FeaturedProjects } from "#/components/home/FeaturedProjects"
-import { HeroSection } from "#/components/home/HeroSection"
 import { NewsSection } from "#/components/home/NewsSection"
-import { SDGShowcase } from "#/components/home/SDGShowcase"
 import { StatsSection } from "#/components/home/StatsSection"
-import Footer from "#/layouts/Footer"
-import Header from "#/layouts/Header"
+import { HeroSection } from "#/components/home/hero-section"
+import { SDGShowcase } from "#/components/home/sdg-showcase"
+import Footer from "#/components/layouts/Footer"
+import Header from "#/components/layouts/Header"
 
 export default function Home() {
     return (

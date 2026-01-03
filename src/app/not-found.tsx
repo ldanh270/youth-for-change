@@ -1,6 +1,6 @@
+import Footer from "#/components/layouts/Footer"
+import Header from "#/components/layouts/Header"
 import { Button } from "#/components/ui/button"
-import Footer from "#/layouts/Footer"
-import Header from "#/layouts/Header"
 
 import { faBan } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -12,7 +12,7 @@ export default function MovieNotFound() {
             <Header variant="solid" />
             <main className="h-fit">
                 {/* 404 Content */}
-                <section className="container mx-auto px-4 py-20 md:px-8">
+                <section className="container mx-auto px-4 pt-20 pb-10 md:px-8">
                     <div className="mx-auto max-w-2xl space-y-6 text-center">
                         <FontAwesomeIcon icon={faBan} className="mx-auto h-20 w-20" />
 
