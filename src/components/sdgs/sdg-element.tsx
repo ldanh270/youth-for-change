@@ -6,7 +6,7 @@ import { Variants, motion } from "framer-motion"
 import Image from "next/image"
 
 interface ISDGElement {
-    number: number
+    id: number
     colorClass: string
     title: string
     description: string
@@ -31,9 +31,9 @@ const itemVariants: Variants = {
     },
 }
 
-export default function SDGElement({ number, colorClass, title, description, image }: ISDGElement) {
+export default function SDGElement({ id, colorClass, title, description, image }: ISDGElement) {
     return (
-        <motion.div key={number} variants={itemVariants}>
+        <motion.div key={id} variants={itemVariants}>
             <Card className="group overflow-hidden border-0 shadow-md transition-all duration-500 hover:shadow-2xl">
                 <CardContent className="p-0">
                     <div className="flex flex-col md:flex-row">
@@ -56,7 +56,7 @@ export default function SDGElement({ number, colorClass, title, description, ima
                                 whileInView={{ opacity: 1 }}
                                 transition={{ delay: 0.1 }}
                             >
-                                Goal {number}: {title}
+                                Goal {id}: {title}
                             </motion.h2>
                             <motion.p
                                 className="text-muted-foreground mb-6 leading-relaxed"
