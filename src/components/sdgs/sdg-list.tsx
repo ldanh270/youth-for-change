@@ -1,7 +1,7 @@
 "use client"
 
 import SDGElement from "#/components/sdgs/sdg-element"
-import { sdgs } from "#/configs/constants/sdgs"
+import { SDGs } from "#/configs/constants/sdgs"
 
 import { type Variants, motion } from "framer-motion"
 
@@ -24,12 +24,12 @@ export default function SDGList() {
             animate="visible"
             className="space-y-6"
         >
-            {sdgs.map(({ id, colorClass, title, description, image }) => (
+            {SDGs.map(({ id, color, title, description, image }) => (
                 <SDGElement
                     key={id}
                     id={id}
                     title={title}
-                    colorClass={colorClass}
+                    color={color}
                     description={description}
                     image={image}
                 />

@@ -3,8 +3,10 @@
 import { Button } from "#/components/ui/button"
 import { Input } from "#/components/ui/input"
 import { Separator } from "#/components/ui/separator"
+import { socialLinks } from "#/configs/constants/socials"
 
-import { Facebook, Instagram, Linkedin, Mail, Twitter, Youtube } from "lucide-react"
+import { Mail } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
 
 const footerLinks = {
@@ -33,14 +35,6 @@ const footerLinks = {
     ],
 }
 
-const socialLinks = [
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Youtube, href: "#", label: "YouTube" },
-]
-
 export default function Footer() {
     return (
         <footer className="bg-card border-border border-t">
@@ -48,14 +42,25 @@ export default function Footer() {
                 <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
                     {/* Brand */}
                     <div className="col-span-2">
-                        <Link href="/" className="mb-4 inline-block">
-                            <span className="font-title text-primary text-2xl font-bold">
-                                Youth<span className="text-success">4</span>Change
+                        <Link
+                            href="/"
+                            className="mb-4 flex flex-row items-center justify-start gap-3"
+                        >
+                            <Image
+                                src={"/logo.png"}
+                                alt="Logo"
+                                width={50}
+                                height={50}
+                                className="inline-block"
+                            />
+                            <span className="font-title from-sdg-6 to-sdg-3 flex flex-col bg-linear-to-b bg-clip-text text-2xl font-bold text-transparent">
+                                Youth For Change
                             </span>
                         </Link>
-                        <p className="text-muted-foreground mb-6 max-w-xs">
-                            Empowering young people to create sustainable change through action,
-                            education, and community engagement.
+                        <p className="text-muted-foreground mb-6 max-w-md md:max-w-sm">
+                            A community project that enhances UD–UFLS students’ SDG knowledge,
+                            fosters positive attitudes, and promotes sustainable practices in daily
+                            life.
                         </p>
 
                         {/* Newsletter */}
@@ -159,9 +164,9 @@ export default function Footer() {
 
                 <Separator className="my-8" />
 
+                {/* Copyright */}
                 <div className="text-muted-foreground flex flex-col items-center justify-between gap-4 text-sm md:flex-row">
                     <p>© {new Date().getFullYear()} Youth for Change. All rights reserved.</p>
-                    <p>Made with ❤️ for a sustainable future</p>
                 </div>
             </div>
         </footer>

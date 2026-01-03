@@ -1,4 +1,4 @@
-export const sdgs = [
+export const SDGs = [
     {
         id: 1,
         title: "No Poverty",
