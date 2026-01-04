@@ -1,7 +1,7 @@
 "use client"
 
 import Header from "#/components/layouts/Header"
-import { cn } from "#/lib/utils"
+import { cn } from "#/libs/utils"
 
 import { useState } from "react"
 

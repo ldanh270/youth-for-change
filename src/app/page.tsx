@@ -6,7 +6,7 @@ import { SDGShowcase } from "#/components/home/sdg-showcase"
 import Footer from "#/components/layouts/Footer"
 import Header from "#/components/layouts/Header"
 
-export default function Home() {
+export default async function Home() {
     return (
         <div className="hide-scrollbar">
             <Header variant="transparent" className="z-40" />

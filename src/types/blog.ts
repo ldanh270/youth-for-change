@@ -1,6 +1,6 @@
 export interface BlogPost {
-    _id?: string
-    title: string
+    id?: string
+    icon: string
     slug: string
     content: string // JSON string from BlockNote
     excerpt: string
