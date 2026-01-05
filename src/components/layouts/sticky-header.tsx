@@ -13,7 +13,7 @@ export default function StickyHeader() {
     // Default: Hide in top
     const [hidden, setHidden] = useState(true)
 
-    useMotionValueEvent(scrollY, "change", (latest) => {
+    useMotionValueEvent(scrollY, "change", (latest: number) => {
         const previous = scrollY.getPrevious() || 0
 
         // Logic show/hide
