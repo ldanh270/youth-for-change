@@ -1,6 +1,6 @@
-import Footer from "#/components/layouts/Footer"
-import Header from "#/components/layouts/Header"
 import { Button } from "#/components/ui/button"
+import Footer from "#/layouts/Footer"
+import Header from "#/layouts/Header"
 
 import { faBan } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
