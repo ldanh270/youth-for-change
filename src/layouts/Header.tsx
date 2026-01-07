@@ -1,6 +1,6 @@
 import ActionButtions from "#/components/header/actions"
 import Navbar from "#/components/header/navbar"
-import { cn } from "#/lib/utils"
+import { cn } from "#/libs/utils"
 
 import Image from "next/image"
 import Link from "next/link"

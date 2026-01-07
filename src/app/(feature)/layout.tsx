@@ -1,5 +1,5 @@
-import Footer from "#/components/layouts/Footer"
-import Header from "#/components/layouts/Header"
+import Footer from "#/layouts/Footer"
+import Header from "#/layouts/Header"
 
 export default function FeatureLayout({
     children,

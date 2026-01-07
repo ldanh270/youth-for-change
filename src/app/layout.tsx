@@ -1,4 +1,4 @@
-import StickyHeader from "#/components/layouts/sticky-header"
+import StickyHeader from "#/layouts/sticky-header"
 
 import type { Metadata } from "next"
 import { ThemeProvider } from "next-themes"
