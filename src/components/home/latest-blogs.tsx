@@ -57,16 +57,14 @@ export async function LatestBlogs() {
                                             Published
                                         </Badge>
                                         <div className="flex gap-1">
-                                            {blog.tags.map((tag) => (
-                                                <Badge
-                                                    key={tag.name}
-                                                    variant="default"
-                                                    className={`text-xs bg-sdg-${tag.name} text-white`}
-                                                    // className="text-xs"
-                                                >
-                                                    SDG {tag.name}
-                                                </Badge>
-                                            ))}
+                                            <Badge
+                                                key={blog.tag}
+                                                variant="default"
+                                                className={`text-xs bg-sdg-${blog.tag} text-white`}
+                                                // className="text-xs"
+                                            >
+                                                SDG {blog.tag}
+                                            </Badge>
                                         </div>
                                     </div>
                                     <CardTitle className="text-xl">{blog.title}</CardTitle>

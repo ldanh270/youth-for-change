@@ -8,7 +8,7 @@ export interface Blog extends Omit<PageObjectResponse, "properties"> {
 
         Slug: Extract<NotionProperties[string], { type: "rich_text" }>
 
-        Tags: Extract<NotionProperties[string], { type: "multi_select" }>
+        Tag: Extract<NotionProperties[string], { type: "select" }>
 
         Description: Extract<NotionProperties[string], { type: "rich_text" }>
 

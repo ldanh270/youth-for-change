@@ -18,13 +18,7 @@ export const mapBlogToCard = (page: Blog) => {
         slug: page.properties.Slug.rich_text[0]?.plain_text || "",
 
         // Tags
-        tags:
-            page.properties.Tags.multi_select?.map((tag) => {
-                return {
-                    name: tag.name,
-                    color: tag.color,
-                }
-            }) || [],
+        tag: page?.properties.Tag.select?.name || "",
 
         // Published date
         publishedDate: page.properties.PublishedDate.date?.start || page.created_time,
