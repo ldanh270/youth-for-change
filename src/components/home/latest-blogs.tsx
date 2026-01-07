@@ -1,6 +1,7 @@
 import { Badge } from "#/components/ui/badge"
 import { Button } from "#/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "#/components/ui/card"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "#/components/ui/card"
+import { SDGs } from "#/configs/constants/sdgs"
 import { getCachedLatestPosts } from "#/libs/cache"
 import { mapBlogToCard } from "#/libs/notion-helper"
 import { Blog } from "#/types/blog"
@@ -34,57 +35,73 @@ export async function LatestBlogs() {
 
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {blogs.map((blog) => (
-                        <Link href={blog.slug} key={blog.id}>
-                            <Card
-                                key={blog.id}
-                                className="overflow-hidden transition-shadow hover:shadow-lg"
-                            >
-                                <div className="h-48 overflow-hidden">
+                        <Link href={blog.slug} key={blog.id} className="group block h-full">
+                            <Card className="border-border/50 bg-card hover:shadow-primary/5 dark:hover:shadow-primary/10 flex h-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                                {/* Cover Section */}
+                                <div className="relative aspect-16/10 w-full overflow-hidden">
                                     <Image
                                         src={blog.cover}
                                         alt={blog.title}
-                                        width={800}
-                                        height={400}
-                                        className="h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+                                        fill
+                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     />
-                                </div>
-                                <CardHeader>
-                                    <div className="mb-2 flex items-center justify-between">
+
+                                    {/* Overlay Gradient at image button*/}
+                                    <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                                    {/* SDG Badge */}
+                                    <div className="absolute top-3 left-3 flex gap-2">
                                         <Badge
-                                            variant="secondary"
-                                            className="bg-success/10 text-success"
+                                            className={`border-0 text-white backdrop-blur-md bg-sdg-${blog.tag} shadow-sm`}
                                         >
-                                            Published
+                                            SDG {blog.tag}
                                         </Badge>
-                                        <div className="flex gap-1">
-                                            <Badge
-                                                key={blog.tag}
-                                                variant="default"
-                                                className={`text-xs bg-sdg-${blog.tag} text-white`}
-                                                // className="text-xs"
-                                            >
-                                                SDG {blog.tag}
-                                            </Badge>
+                                    </div>
+                                </div>
+
+                                {/* Content Section */}
+                                <CardHeader className="space-y-2 p-5 pb-2">
+                                    {/* SDG Title */}
+                                    <span className="text-muted-foreground text-xs font-semibold tracking-wider uppercase">
+                                        {SDGs[Number(blog.tag) - 1]?.title || "General"}
+                                    </span>
+
+                                    {/* Main Title */}
+                                    <CardTitle className="group-hover:text-primary line-clamp-2 text-xl leading-tight font-bold transition-colors">
+                                        {blog.title}
+                                    </CardTitle>
+                                </CardHeader>
+
+                                <CardContent className="grow p-5 py-2">
+                                    {/* Description */}
+                                    <p className="text-muted-foreground line-clamp-3 text-sm leading-relaxed">
+                                        {blog.description}
+                                    </p>
+                                </CardContent>
+
+                                {/* Footer Section: Meta info & CTA */}
+                                <CardFooter className="bg-muted/5 text-muted-foreground flex items-center justify-between border-t p-4 py-3 text-xs">
+                                    <div className="flex items-center gap-4">
+                                        <div className="flex items-center gap-1.5">
+                                            <Calendar className="h-3.5 w-3.5" />
+                                            <span>
+                                                {new Date(blog.publishedDate).toLocaleDateString(
+                                                    "en-US",
+                                                    {
+                                                        month: "short",
+                                                        day: "numeric",
+                                                        year: "numeric",
+                                                    },
+                                                )}
+                                            </span>
                                         </div>
                                     </div>
-                                    <CardTitle className="text-xl">{blog.title}</CardTitle>
-                                    <CardDescription>{blog.description}</CardDescription>
-                                </CardHeader>
-                                <CardContent>
-                                    <div className="text-muted-foreground flex items-center text-sm">
-                                        <Calendar className="mr-1 h-3 w-3" />
-                                        <span>
-                                            {new Date(blog.publishedDate).toLocaleDateString(
-                                                "en-US",
-                                                {
-                                                    month: "short",
-                                                    day: "numeric",
-                                                    year: "numeric",
-                                                },
-                                            )}
-                                        </span>
+
+                                    <div className="text-primary flex items-center gap-1 font-medium opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100">
+                                        Read more <ArrowRight className="h-3.5 w-3.5" />
                                     </div>
-                                </CardContent>
+                                </CardFooter>
                             </Card>
                         </Link>
                     ))}
