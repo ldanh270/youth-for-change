@@ -60,8 +60,9 @@ export async function LatestBlogs() {
                                             {blog.tags.map((tag) => (
                                                 <Badge
                                                     key={tag.name}
-                                                    variant="outline"
-                                                    className="text-xs"
+                                                    variant="default"
+                                                    className={`text-xs bg-sdg-${tag.name} text-white`}
+                                                    // className="text-xs"
                                                 >
                                                     SDG {tag.name}
                                                 </Badge>
