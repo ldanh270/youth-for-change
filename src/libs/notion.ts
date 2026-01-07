@@ -11,10 +11,10 @@ const notion = new Client({
 const notionToMD = new NotionToMarkdown({ notionClient: notion })
 
 /**
- * Get latest posts
+ * Get latest blogs
  * @param limit Page amount to get
  * @param cursor Cursor to support pagination
- * @returns Latest post list
+ * @returns Latest blog list
  */
 export const getLatestBlogs = async ({
     limit = 5,
@@ -24,10 +24,10 @@ export const getLatestBlogs = async ({
     cursor?: string
 }): Promise<(PartialPageObjectResponse | PageObjectResponse)[]> => {
     // Get list object
-    const posts = await notion.dataSources.query({
+    const blogs = await notion.dataSources.query({
         // Data source id
         data_source_id: blogDataSourceId,
-        // Limit posts to query
+        // Limit blogs to query
         page_size: limit,
         // Cursor
         start_cursor: cursor || undefined,
@@ -47,20 +47,20 @@ export const getLatestBlogs = async ({
         ],
     })
 
-    // Return posts in list results
-    return posts.results.filter(isFullPage)
+    // Return blogs in list results
+    return blogs.results.filter(isFullPage)
 }
 
 /**
- * Get post details by slug
- * @param slug post's url on broswer
+ * Get blog details by slug
+ * @param slug blog's url on broswer
  * @returns { metadata, markdown }
  * - Blog metadata
  * - Markdown string content
  */
 export const getBlogBySlug = async ({ slug }: { slug: string }) => {
-    // Find post with input slug
-    const post = await notion.dataSources.query({
+    // Find blog with input slug
+    const blog = await notion.dataSources.query({
         // Data source id
         data_source_id: blogDataSourceId,
         // Filter data
@@ -73,13 +73,13 @@ export const getBlogBySlug = async ({ slug }: { slug: string }) => {
         },
     })
 
-    const page = post.results[0]
+    const page = blog.results[0]
 
     if (!page || !isFullPage(page)) {
         return null // Skip if not found or partial object
     }
 
-    // Get metadata to display in post header
+    // Get metadata to display in blog header
     const metadata = {
         // Id
         id: page.id,
@@ -88,9 +88,8 @@ export const getBlogBySlug = async ({ slug }: { slug: string }) => {
             page.properties?.Title?.type === "title"
                 ? page.properties.Title.title[0]?.plain_text
                 : null,
-        // Tags
-        tags:
-            page.properties?.Tags.type === "multi_select" ? page.properties.Tags.multi_select : [],
+        // Tag
+        tag: page.properties?.Tag.type === "select" ? page.properties.Tag.select?.name : "General",
         // Thumbnail
         coverUrl: page.cover?.type === "external" ? page.cover?.external?.url : "",
         // Description

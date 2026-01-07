@@ -17,7 +17,7 @@ export const mapBlogToCard = (page: Blog) => {
         // Slug
         slug: page.properties.Slug.rich_text[0]?.plain_text || "",
 
-        // Tags
+        // Tag
         tag: page?.properties.Tag.select?.name || "",
 
         // Published date

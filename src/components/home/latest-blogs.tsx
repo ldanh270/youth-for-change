@@ -35,7 +35,11 @@ export async function LatestBlogs() {
 
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {blogs.map((blog) => (
-                        <Link href={blog.slug} key={blog.id} className="group block h-full">
+                        <Link
+                            href={`/blogs/${blog.slug}`}
+                            key={blog.id}
+                            className="group block h-full"
+                        >
                             <Card className="border-border/50 bg-card hover:shadow-primary/5 dark:hover:shadow-primary/10 flex h-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
                                 {/* Cover Section */}
                                 <div className="relative aspect-16/10 w-full overflow-hidden">
