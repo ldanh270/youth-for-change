@@ -1,6 +1,6 @@
 import { blogDataSourceId, notionToken } from "#/configs/notion"
 
-import { Client, isFullPage } from "@notionhq/client"
+import { Client, PageObjectResponse, PartialPageObjectResponse, isFullPage } from "@notionhq/client"
 import { NotionToMarkdown } from "notion-to-md"
 
 // Init Client (Access to notion page)
@@ -11,42 +11,59 @@ const notion = new Client({
 const notionToMD = new NotionToMarkdown({ notionClient: notion })
 
 /**
- * Get published posts
- * @returns published post list
+ * Get latest posts
+ * @param limit Page amount to get
+ * @param cursor Cursor to support pagination
+ * @returns Latest post list
  */
-export const getPublishedPosts = async () => {
+export const getLatestBlogs = async ({
+    limit = 5,
+    cursor,
+}: {
+    limit?: number
+    cursor?: string
+}): Promise<(PartialPageObjectResponse | PageObjectResponse)[]> => {
     // Get list object
     const posts = await notion.dataSources.query({
+        // Data source id
         data_source_id: blogDataSourceId,
+        // Limit posts to query
+        page_size: limit,
+        // Cursor
+        start_cursor: cursor || undefined,
+        // Filter data
         filter: {
             property: "Status", // Filter column name
             status: {
                 equals: "Published", // Value to filter
             },
         },
+        // Sort by descending
         sorts: [
             {
-                property: "Publication Date", // Sort by property publication date
+                property: "PublishedDate", // Sort by property publication date
                 direction: "descending", // Sort by decending
             },
         ],
     })
 
     // Return posts in list results
-    return posts.results
+    return posts.results.filter(isFullPage)
 }
 
 /**
  * Get post details by slug
  * @param slug post's url on broswer
  * @returns { metadata, markdown }
- * - Post metadata
+ * - Blog metadata
  * - Markdown string content
  */
-export const getPostBySlug = async (slug: string) => {
+export const getBlogBySlug = async ({ slug }: { slug: string }) => {
     // Find post with input slug
     const post = await notion.dataSources.query({
+        // Data source id
         data_source_id: blogDataSourceId,
+        // Filter data
         filter: {
             property: "Slug",
             // Use rich_text instead of string (plan_text) to handle text annotations
@@ -64,7 +81,7 @@ export const getPostBySlug = async (slug: string) => {
 
     // Get metadata to display in post header
     const metadata = {
-        // Post id
+        // Id
         id: page.id,
         // Title
         title:
@@ -93,6 +110,6 @@ export const getPostBySlug = async (slug: string) => {
 
     return {
         metadata,
-        markdown: mdString.parent, // Markdown string
+        markdown: mdString.parent || "", // Markdown string
     }
 }
