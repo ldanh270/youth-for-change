@@ -257,23 +257,23 @@
     --sidebar-ring: oklch(0.72 0.16 150);
 
     /* --- 17 SDGs Colors --- */
-    --sdg-1: #eb1c2e;
-    --sdg-2: #d3a02a;
-    --sdg-3: #279b48;
-    --sdg-4: #c21f32;
-    --sdg-5: #ef402b;
-    --sdg-6: #01aed9;
-    --sdg-7: #fcb712;
-    --sdg-8: #8f1838;
-    --sdg-9: #f36d26;
-    --sdg-10: #e01483;
-    --sdg-11: #fa9d26;
-    --sdg-12: #cf8e2a;
-    --sdg-13: #48783e;
-    --sdg-14: #017dbd;
-    --sdg-15: #3db049;
-    --sdg-16: #02558b;
-    --sdg-17: #183668;
+    --sdg-1: #e5243b;
+    --sdg-2: #dda63a;
+    --sdg-3: #4c9f38;
+    --sdg-4: #c5192d;
+    --sdg-5: #ff3a21;
+    --sdg-6: #26bde2;
+    --sdg-7: #fcc30b;
+    --sdg-8: #a21942;
+    --sdg-9: #fd6925;
+    --sdg-10: #dd1367;
+    --sdg-11: #fd9d24;
+    --sdg-12: #bf8b2e;
+    --sdg-13: #3f7e44;
+    --sdg-14: #0a97d9;
+    --sdg-15: #56c02b;
+    --sdg-16: #00689d;
+    --sdg-17: #19486a;
 
     /* Chart Colors */
     --chart-1: oklch(0.4 0.12 250);
