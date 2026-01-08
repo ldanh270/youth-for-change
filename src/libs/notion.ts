@@ -54,7 +54,7 @@ export const getLatestBlogs = async ({
 /**
  * Get blog details by slug
  * @param slug blog's url on broswer
- * @returns { metadata, markdown }
+ * @returns
  * - Blog metadata
  * - Markdown string content
  */
@@ -98,7 +98,10 @@ export const getBlogBySlug = async ({ slug }: { slug: string }) => {
                 ? page.properties.Description.rich_text[0]?.plain_text
                 : "",
         // Created time
-        created_time: page.created_time,
+        published_date:
+            page.properties?.PublishedDate.type === "date"
+                ? page.properties.PublishedDate.date?.start
+                : "",
         // Last edited time
         last_edited_time: page.last_edited_time,
     }
