@@ -23,6 +23,7 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
     title: "Youth for change",
+    icons: "/logo.png",
     description: "Youth for change 2025 - Landing page website for 17 SDGs communication",
 }
 
