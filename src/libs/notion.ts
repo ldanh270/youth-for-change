@@ -63,7 +63,7 @@ export const getLatestBlogs = async ({
         // Sort by descending
         sorts: [
             {
-                property: "PublishedDate", // Sort by property publication date
+                timestamp: "last_edited_time", // Sort by last edited time
                 direction: "descending", // Sort by decending
             },
         ],
@@ -122,11 +122,6 @@ export const getBlogBySlug = async ({ slug }: { slug: string }) => {
         description:
             page.properties?.Description.type === "rich_text"
                 ? page.properties.Description.rich_text[0]?.plain_text
-                : "",
-        // Created time
-        published_date:
-            page.properties?.PublishedDate.type === "date"
-                ? page.properties.PublishedDate.date?.start
                 : "",
         // Last edited time
         last_edited_time: page.last_edited_time,

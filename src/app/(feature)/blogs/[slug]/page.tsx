@@ -20,7 +20,7 @@ interface BlogDetailsPageProps {
  */
 export async function generateStaticParams() {
     const rawPosts = await getCachedLatestPosts({ limit: 5 })
-    const blogs = rawPosts.map((post) => mapBlogToCard(post as Blog))
+    const blogs = rawPosts.blogs.map((post) => mapBlogToCard(post as Blog))
 
     return blogs.map((blog) => ({
         slug: blog.slug,
@@ -120,7 +120,6 @@ export default async function BlogDetailsPage({ params }: BlogDetailsPageProps) 
                     <article className="min-w-0 flex-1">
                         {/* Title Section */}
                         <header className="mb-8 border-b pb-6">
-                            {/* Tags - ĐÃ SỬA: Thêm Link để filter */}
                             <div className="flex items-center py-5">
                                 {metadata.tag && (
                                     <Link href={`/blogs?tag=${metadata.tag}`}>
@@ -148,27 +147,27 @@ export default async function BlogDetailsPage({ params }: BlogDetailsPageProps) 
                             {/* Meta */}
                             <div className="text-muted-foreground flex flex-wrap items-center gap-6 text-sm">
                                 {/* Last updated */}
-                                <div className="flex items-center gap-2">
-                                    <svg
-                                        className="h-4 w-4"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                    >
-                                        <path
-                                            strokeLinecap="round"
-                                            strokeLinejoin="round"
-                                            strokeWidth={2}
-                                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                                        />
-                                    </svg>
-                                    {metadata.published_date && (
+                                {metadata.last_edited_time && (
+                                    <div className="flex items-center gap-2">
+                                        <svg
+                                            className="h-4 w-4"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path
+                                                strokeLinecap="round"
+                                                strokeLinejoin="round"
+                                                strokeWidth={2}
+                                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                                            />
+                                        </svg>
                                         <span>
                                             Last updated:{" "}
-                                            {timeFormatter({ time: metadata.published_date })}
+                                            {timeFormatter({ time: metadata.last_edited_time })}
                                         </span>
-                                    )}
-                                </div>
+                                    </div>
+                                )}
                             </div>
                         </header>
 

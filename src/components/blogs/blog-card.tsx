@@ -29,10 +29,7 @@ export default function BlogCard({ blog }: { blog: PageObjectResponse }) {
     const tag =
         blog.properties?.Tag.type === "select" ? blog.properties.Tag.select?.name : "General"
 
-    const publishedDate =
-        blog.properties?.PublishedDate.type === "date"
-            ? blog.properties.PublishedDate.date?.start
-            : ""
+    const lastEditedTime = blog.last_edited_time
 
     return (
         <Link href={`/blogs/${slug}`} className="group block h-full w-full">
@@ -82,7 +79,7 @@ export default function BlogCard({ blog }: { blog: PageObjectResponse }) {
                 {/* Footer Section: Meta info & CTA */}
                 <CardFooter className="bg-muted/5 text-muted-foreground flex items-center justify-between border-t p-4 py-3 text-xs">
                     {/* Last updated */}
-                    {publishedDate && (
+                    {lastEditedTime && (
                         <div className="flex items-center gap-2">
                             <svg
                                 className="h-4 w-4"
@@ -97,7 +94,7 @@ export default function BlogCard({ blog }: { blog: PageObjectResponse }) {
                                     d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                                 />
                             </svg>
-                            <span>Last updated: {timeFormatter({ time: publishedDate })}</span>
+                            <span>Last updated: {timeFormatter({ time: lastEditedTime })}</span>
                         </div>
                     )}
 
