@@ -29,7 +29,7 @@ export async function LatestBlogs() {
                 </div>
 
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                    {blogs.filter(isFullPage).map((blog) => (
+                    {blogs.blogs.filter(isFullPage).map((blog) => (
                         <BlogCard blog={blog} key={blog.id} />
                     ))}
                 </div>

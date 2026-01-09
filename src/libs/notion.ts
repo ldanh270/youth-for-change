@@ -24,7 +24,11 @@ export const getLatestBlogs = async ({
     limit?: number
     tag?: string
     cursor?: string
-}): Promise<(PartialPageObjectResponse | PageObjectResponse)[]> => {
+}): Promise<{
+    blogs: (PartialPageObjectResponse | PageObjectResponse)[]
+    nextCursor: string | null
+    hasMore: boolean
+}> => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const filter: any = {
         and: [
@@ -38,8 +42,6 @@ export const getLatestBlogs = async ({
     }
 
     if (tag) {
-        console.log("Applying tag filter:", tag)
-
         filter.and.push({
             property: "Tag",
             select: {
@@ -68,7 +70,11 @@ export const getLatestBlogs = async ({
     })
 
     // Return blogs in list results
-    return blogs.results.filter(isFullPage)
+    return {
+        blogs: blogs.results.filter(isFullPage),
+        nextCursor: blogs.next_cursor,
+        hasMore: blogs.has_more,
+    }
 }
 
 /**
