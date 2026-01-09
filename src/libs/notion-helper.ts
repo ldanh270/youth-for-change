@@ -17,11 +17,11 @@ export const mapBlogToCard = (page: Blog) => {
         // Slug
         slug: page.properties.Slug.rich_text[0]?.plain_text || "",
 
-        // Tags
+        // Tag
         tag: page?.properties.Tag.select?.name || "",
 
-        // Published date
-        publishedDate: page.properties.PublishedDate.date?.start || page.created_time,
+        // Last edited time
+        lastEditedTime: page.last_edited_time,
 
         // Description
         description: page.properties.Description.rich_text.map((t) => t.plain_text).join(""),
