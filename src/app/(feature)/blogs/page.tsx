@@ -1,26 +1,33 @@
-import BlogGrid from "#/components/blogs/blog-grid"
 import BlogHeader from "#/components/blogs/blog-header"
-import { getLatestBlogs } from "#/libs/notion"
+import BlogList from "#/components/blogs/blog-list"
+import { PaginationBar } from "#/components/blogs/pagination"
+import { getCachedLatestPosts } from "#/libs/cache"
 
-export default async function BlogsPage() {
-    const blogs = await getLatestBlogs({ limit: 12 })
+export default async function BlogsPage({
+    searchParams,
+}: {
+    searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}) {
+    const { tag } = await searchParams
+
+    // TODO: Config to pagination
+    // const page = Number(searchParams.page) || 1
+
+    const blogs = await getCachedLatestPosts({ limit: 20, tag: tag?.toString() })
 
     return (
-        <div className="from-background via-card to-background min-h-screen bg-linear-to-br">
-            <div className="container mx-auto px-4 py-16">
+        <div className="h-screen">
+            <div className="mx-auto flex h-full flex-col items-center justify-between">
                 {/* Header */}
-                <BlogHeader />
+                <BlogHeader className="mt-16" tag={tag?.toString()} />
 
-                {/* Blog Grid */}
-                {blogs.length > 0 ? (
-                    <BlogGrid blogs={blogs} />
-                ) : (
-                    <div className="py-20 text-center">
-                        <p className="text-muted-foreground text-lg">
-                            Chưa có bài viết nào được xuất bản.
-                        </p>
-                    </div>
-                )}
+                {/* Blog list */}
+                <BlogList blogs={blogs} className="mx-20 self-stretch" />
+
+                {/* Pagination */}
+                <div className="mt-auto">
+                    <PaginationBar />
+                </div>
             </div>
         </div>
     )

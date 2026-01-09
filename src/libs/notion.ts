@@ -18,11 +18,36 @@ const notionToMD = new NotionToMarkdown({ notionClient: notion })
  */
 export const getLatestBlogs = async ({
     limit = 5,
+    tag,
     cursor,
 }: {
     limit?: number
+    tag?: string
     cursor?: string
 }): Promise<(PartialPageObjectResponse | PageObjectResponse)[]> => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const filter: any = {
+        and: [
+            {
+                property: "Status",
+                status: {
+                    equals: "Published",
+                },
+            },
+        ],
+    }
+
+    if (tag) {
+        console.log("Applying tag filter:", tag)
+
+        filter.and.push({
+            property: "Tag",
+            select: {
+                equals: tag,
+            },
+        })
+    }
+
     // Get list object
     const blogs = await notion.dataSources.query({
         // Data source id
@@ -32,12 +57,7 @@ export const getLatestBlogs = async ({
         // Cursor
         start_cursor: cursor || undefined,
         // Filter data
-        filter: {
-            property: "Status", // Filter column name
-            status: {
-                equals: "Published", // Value to filter
-            },
-        },
+        filter: filter,
         // Sort by descending
         sorts: [
             {

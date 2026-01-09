@@ -3,6 +3,7 @@ import { getCachedLatestPosts } from "#/libs/cache"
 import { convertMarkdownToHTML } from "#/libs/markdown-converter"
 import { getBlogBySlug } from "#/libs/notion"
 import { mapBlogToCard } from "#/libs/notion-helper"
+import { timeFormatter } from "#/libs/utils"
 import { Blog } from "#/types/blog"
 
 import { Metadata } from "next"
@@ -16,11 +17,9 @@ interface BlogDetailsPageProps {
 
 /**
  * Build static slug for SSG
- * @returns Slug to prebuild
  */
 export async function generateStaticParams() {
     const rawPosts = await getCachedLatestPosts({ limit: 5 })
-
     const blogs = rawPosts.map((post) => mapBlogToCard(post as Blog))
 
     return blogs.map((blog) => ({
@@ -30,11 +29,6 @@ export async function generateStaticParams() {
 
 /**
  * Generate metadata to support SEO
- * @param param Promise built params
- * @returns Metadata
- * - Title
- * - Description
- * => To support SEO
  */
 export async function generateMetadata({
     params,
@@ -42,7 +36,6 @@ export async function generateMetadata({
     params: Promise<{ slug: string }>
 }): Promise<Metadata> {
     const { slug } = await params
-
     const blog = await getBlogBySlug({ slug })
     return {
         title: blog?.metadata.title,
@@ -52,10 +45,6 @@ export async function generateMetadata({
 
 /**
  * Blog details page
- * @param param Prebuilt static slug
- * @returns
- * - General: Metadata info
- * - Content: Converted HTML content by Markdown text
  */
 export default async function BlogDetailsPage({ params }: BlogDetailsPageProps) {
     const { slug } = await params
@@ -71,7 +60,7 @@ export default async function BlogDetailsPage({ params }: BlogDetailsPageProps) 
         <div className="bg-background min-h-screen">
             {/* Cover image */}
             {metadata.coverUrl && (
-                <div className="relative h-100 w-full overflow-hidden border-b">
+                <div className="relative h-96 w-full overflow-hidden border-b">
                     <Image
                         src={metadata.coverUrl}
                         alt={metadata.title || "Blog cover"}
@@ -83,7 +72,7 @@ export default async function BlogDetailsPage({ params }: BlogDetailsPageProps) 
             )}
 
             {/* Breadcrumb */}
-            <div className="bg-muted/30 border">
+            <div className="bg-muted/30 border-b">
                 <div className="container mx-auto max-w-7xl px-4 py-3">
                     <nav className="text-muted-foreground flex items-center gap-2 text-sm">
                         <Link href="/" className="hover:text-foreground transition-colors">
@@ -131,18 +120,21 @@ export default async function BlogDetailsPage({ params }: BlogDetailsPageProps) 
                     <article className="min-w-0 flex-1">
                         {/* Title Section */}
                         <header className="mb-8 border-b pb-6">
-                            {/* Tags */}
+                            {/* Tags - ĐÃ SỬA: Thêm Link để filter */}
                             <div className="flex items-center py-5">
                                 {metadata.tag && (
-                                    <Badge
-                                        className={`border-0 text-white backdrop-blur-md bg-sdg-${metadata.tag} shadow-sm`}
-                                    >
-                                        SDG {metadata.tag}
-                                    </Badge>
+                                    <Link href={`/blogs?tag=${metadata.tag}`}>
+                                        <Badge
+                                            className={`border-0 text-white backdrop-blur-md bg-sdg-${metadata.tag} cursor-pointer shadow-sm transition-opacity hover:opacity-80`}
+                                        >
+                                            SDG {metadata.tag}
+                                        </Badge>
+                                    </Link>
                                 )}
                             </div>
+
                             {/* Title */}
-                            <h1 className="text-foreground mb-4 text-5xl leading-tight font-bold md:text-5xl">
+                            <h1 className="text-foreground mb-4 text-4xl leading-tight font-bold md:text-5xl">
                                 {metadata.title}
                             </h1>
 
@@ -170,12 +162,12 @@ export default async function BlogDetailsPage({ params }: BlogDetailsPageProps) 
                                             d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                                         />
                                     </svg>
-                                    <span>
-                                        Last updated:{" "}
-                                        {new Date(metadata.last_edited_time).toLocaleDateString(
-                                            "vi-VN",
-                                        )}
-                                    </span>
+                                    {metadata.published_date && (
+                                        <span>
+                                            Last updated:{" "}
+                                            {timeFormatter({ time: metadata.published_date })}
+                                        </span>
+                                    )}
                                 </div>
                             </div>
                         </header>

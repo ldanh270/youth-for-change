@@ -10,8 +10,8 @@ import { unstable_cache } from "next/cache"
  * => Using unstable_cache to caching by response data
  */
 export const getCachedLatestPosts = unstable_cache(
-    async ({ limit = 5 }: { limit?: number }) => {
-        return await getLatestBlogs({ limit })
+    async ({ limit = 5, tag, cursor }: { limit?: number; tag?: string; cursor?: string }) => {
+        return await getLatestBlogs({ limit, tag, cursor })
     },
     ["latest-posts-key"], // Identify key to cache
     {

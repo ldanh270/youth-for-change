@@ -1,12 +1,14 @@
+import { Badge } from "#/components/ui/badge"
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "#/components/ui/card"
+import { SDGs } from "#/configs/constants/sdgs"
+import { timeFormatter } from "#/libs/utils"
+
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints"
+import { ArrowRight } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
-interface BlogCardProps {
-    blog: PageObjectResponse
-}
-
-export default function BlogCard({ blog }: BlogCardProps) {
+export default function BlogCard({ blog }: { blog: PageObjectResponse }) {
     const title =
         blog.properties?.Title?.type === "title"
             ? blog.properties.Title.title[0]?.plain_text
@@ -22,85 +24,88 @@ export default function BlogCard({ blog }: BlogCardProps) {
             ? blog.properties.Slug.rich_text[0]?.plain_text
             : ""
 
-    const coverUrl =
-        blog.cover?.type === "external" ? blog.cover?.external?.url : "/placeholder-blog.jpg"
+    const cover = blog.cover?.type === "external" ? blog.cover?.external?.url : "/placeholder.png"
 
-    const tags =
-        blog.properties?.Tags?.type === "multi_select" ? blog.properties.Tags.multi_select : []
+    const tag =
+        blog.properties?.Tag.type === "select" ? blog.properties.Tag.select?.name : "General"
 
     const publishedDate =
-        blog.properties?.PublishedDate?.type === "date"
+        blog.properties?.PublishedDate.type === "date"
             ? blog.properties.PublishedDate.date?.start
-            : blog.created_time
+            : ""
 
     return (
-        <Link
-            href={`/blogs/${slug}`}
-            className="group border-border bg-card hover:border-primary/50 block h-full overflow-hidden rounded-xl border transition-all duration-300 hover:shadow-lg"
-        >
-            {/* Image */}
-            <div className="bg-muted relative h-48 w-full overflow-hidden">
-                <Image
-                    src={coverUrl}
-                    alt={title}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                />
-            </div>
+        <Link href={`/blogs/${slug}`} className="group block h-full w-full">
+            <Card className="border-border/50 bg-card hover:shadow-primary/5 dark:hover:shadow-primary/10 flex h-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                {/* Cover Section */}
+                <div className="relative aspect-16/10 w-full overflow-hidden">
+                    <Image
+                        src={cover}
+                        alt={title}
+                        fill
+                        className="bg-cover object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
 
-            {/* Content */}
-            <div className="space-y-4 p-6">
-                {/* Tags */}
-                {tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2">
-                        {tags.slice(0, 3).map((tag) => (
-                            <span
-                                key={tag.id}
-                                className="bg-primary/10 text-primary rounded-full px-3 py-1 text-xs font-medium"
-                            >
-                                {tag.name}
-                            </span>
-                        ))}
+                    {/* Overlay Gradient at image button*/}
+                    <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+
+                    {/* SDG Badge */}
+                    <div className="absolute top-3 left-3 flex gap-2">
+                        <Badge
+                            className={`border-0 text-white backdrop-blur-md bg-sdg-${tag} shadow-sm`}
+                        >
+                            SDG {tag}
+                        </Badge>
                     </div>
-                )}
+                </div>
 
-                {/* Title */}
-                <h3 className="text-foreground group-hover:text-primary line-clamp-2 text-xl font-bold transition-colors">
-                    {title}
-                </h3>
+                {/* Content Section */}
+                <CardHeader className="space-y-2 p-5 pb-2">
+                    {/* SDG Title */}
+                    <span className="text-muted-foreground text-xs font-semibold tracking-wider uppercase">
+                        {SDGs[Number(tag) - 1]?.title || "General"}
+                    </span>
 
-                {/* Description */}
-                {description && (
+                    {/* Main Title */}
+                    <CardTitle className="group-hover:text-primary line-clamp-2 text-xl leading-tight font-bold transition-colors">
+                        {title}
+                    </CardTitle>
+                </CardHeader>
+
+                <CardContent className="grow p-5 py-2">
+                    {/* Description */}
                     <p className="text-muted-foreground line-clamp-3 text-sm leading-relaxed">
                         {description}
                     </p>
-                )}
+                </CardContent>
 
-                {/* Date */}
-                <div className="text-muted-foreground border-border flex items-center gap-2 border-t pt-2 text-xs">
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-4 w-4"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                        />
-                    </svg>
-                    <time dateTime={publishedDate}>
-                        {new Date(publishedDate).toLocaleDateString("vi-VN", {
-                            year: "numeric",
-                            month: "long",
-                            day: "numeric",
-                        })}
-                    </time>
-                </div>
-            </div>
+                {/* Footer Section: Meta info & CTA */}
+                <CardFooter className="bg-muted/5 text-muted-foreground flex items-center justify-between border-t p-4 py-3 text-xs">
+                    {/* Last updated */}
+                    {publishedDate && (
+                        <div className="flex items-center gap-2">
+                            <svg
+                                className="h-4 w-4"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth={2}
+                                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                                />
+                            </svg>
+                            <span>Last updated: {timeFormatter({ time: publishedDate })}</span>
+                        </div>
+                    )}
+
+                    <div className="text-primary ml-auto flex items-center justify-end gap-1 font-medium opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100">
+                        Read more <ArrowRight className="h-3.5 w-3.5" />
+                    </div>
+                </CardFooter>
+            </Card>
         </Link>
     )
 }
