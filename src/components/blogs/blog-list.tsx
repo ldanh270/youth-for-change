@@ -37,7 +37,7 @@ export default function BlogList({
     return (
         <div className={`${className} pb-10`}>
             {blogs.length > 0 ? (
-                <div className="grid w-full gap-6 md:grid-cols-2 lg:grid-cols-4">
+                <div className="grid w-full gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {blogs.map((blog) => {
                         if ("properties" in blog) {
                             return <BlogCard key={blog.id} blog={blog as PageObjectResponse} />
