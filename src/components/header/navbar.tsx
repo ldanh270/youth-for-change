@@ -23,7 +23,98 @@ type NavElementType = {
 }
 
 const navElements: NavElementType[] = [
-    { name: "SDGs", link: "/sdgs" },
+    {
+        name: "SDGs",
+        link: "/sdgs",
+        childs: [
+            {
+                name: "SDG 1",
+                link: "/sdgs/1",
+                description: "No Poverty",
+            },
+            {
+                name: "SDG 2",
+                link: "/sdgs/2",
+                description: "Zero Hunger",
+            },
+            {
+                name: "SDG 3",
+                link: "/sdgs/3",
+                description: "Good Health and Well-Being",
+            },
+            {
+                name: "SDG 4",
+                link: "/sdgs/4",
+                description: "Quality Education",
+            },
+            {
+                name: "SDG 5",
+                link: "/sdgs/5",
+                description: "Gender Equality",
+            },
+            {
+                name: "SDG 6",
+                link: "/sdgs/6",
+                description: "Clean Water and Sanitation",
+            },
+            {
+                name: "SDG 7",
+                link: "/sdgs/7",
+                description: "Affordable and Clean Energy",
+            },
+            {
+                name: "SDG 8",
+                link: "/sdgs/8",
+                description: "Decent Work and Economic Growth",
+            },
+            {
+                name: "SDG 9",
+                link: "/sdgs/9",
+                description: "Industry, Innovation and Infrastructure",
+            },
+            {
+                name: "SDG 10",
+                link: "/sdgs/10",
+                description: "Reduced Inequality",
+            },
+            {
+                name: "SDG 11",
+                link: "/sdgs/11",
+                description: "Sustainable Cities and Communities",
+            },
+            {
+                name: "SDG 12",
+                link: "/sdgs/12",
+                description: "Responsible Consumption and Production",
+            },
+            {
+                name: "SDG 13",
+                link: "/sdgs/13",
+                description: "Climate Action",
+            },
+            {
+                name: "SDG 14",
+                link: "/sdgs/14",
+                description: "Life Below Water",
+            },
+            {
+                name: "SDG 15",
+                link: "/sdgs/15",
+                description: "Life on Land",
+            },
+            {
+                name: "SDG 16",
+                link: "/sdgs/16",
+                description: "Peace, Justice and Strong Institutions",
+            },
+            {
+                name: "SDG 17",
+                link: "/sdgs/17",
+                description: "Partnerships for the Goals",
+            },
+        ],
+    },
+    { name: "Blogs", link: "/blogs" },
     {
         name: "About Us",
         link: "/about",
@@ -46,53 +137,6 @@ const navElements: NavElementType[] = [
             },
         ],
     },
-    {
-        name: "SDG projects",
-        link: "/sdg-projects",
-        childs: [
-            {
-                name: "SDG 1",
-                link: "/sdg-projects/1",
-                description: "Project description",
-            },
-            {
-                name: "SDG 2",
-                link: "/sdg-projects/2",
-                description: "Project description",
-            },
-            {
-                name: "SDG 3",
-                link: "/sdg-projects/3",
-                description: "Project description",
-            },
-            {
-                name: "SDG 4",
-                link: "/sdg-projects/4",
-                description: "Project description",
-            },
-            {
-                name: "SDG 5",
-                link: "/sdg-projects/5",
-                description: "Project description",
-            },
-            {
-                name: "SDG 6",
-                link: "/sdg-projects/6",
-                description: "Project description",
-            },
-            {
-                name: "SDG 7",
-                link: "/sdg-projects/7",
-                description: "Project description",
-            },
-            {
-                name: "SDG 8",
-                link: "/sdg-projects/8",
-                description: "Project description",
-            },
-        ],
-    },
-    { name: "News", link: "/news" },
 ]
 
 export default function Navbar({ className }: { className?: string }) {

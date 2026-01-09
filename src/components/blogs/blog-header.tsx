@@ -26,7 +26,7 @@ export default function BlogHeader({ className, tag }: { className?: string; tag
             </p>
 
             {/* Badges */}
-            <div className="flex w-full flex-row gap-2">
+            <div className="hidden w-full flex-row flex-wrap gap-2 md:flex md:items-center md:justify-center md:gap-6 md:px-10">
                 {SDGs.map(({ id, color }) => (
                     <Link href={checkTags({ id })} key={id}>
                         <Badge
