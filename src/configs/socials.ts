@@ -1,6 +1,6 @@
 import { Facebook, Instagram, Linkedin, Twitter, Youtube } from "lucide-react"
 
-export const socialLinks = [
+export const SOCIALS = [
     {
         icon: Facebook,
         href: "https://www.facebook.com/profile.php?id=61581107405760",

@@ -1,7 +1,7 @@
 "use client"
 
 import SDGElement from "#/components/sdgs/sdg-element"
-import { SDGs } from "#/configs/constants/sdgs"
+import { SDGs } from "#/configs/sdgs"
 
 import { type Variants, motion } from "framer-motion"
 
