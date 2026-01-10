@@ -1,6 +1,6 @@
 import { Badge } from "#/components/ui/badge"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "#/components/ui/card"
-import { SDGs } from "#/configs/constants/sdgs"
+import { SDGs } from "#/configs/sdgs"
 import { timeFormatter } from "#/libs/utils"
 
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints"

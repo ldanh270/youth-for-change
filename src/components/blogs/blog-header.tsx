@@ -1,5 +1,5 @@
 import { Badge } from "#/components/ui/badge"
-import { SDGs } from "#/configs/constants/sdgs"
+import { SDGs } from "#/configs/sdgs"
 
 import Link from "next/link"
 

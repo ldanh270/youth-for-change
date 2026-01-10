@@ -115,27 +115,10 @@ const navElements: NavElementType[] = [
         ],
     },
     { name: "Blogs", link: "/blogs" },
+    { name: "Flipbook", link: "/flipbook" },
     {
         name: "About Us",
-        link: "/about",
-        childs: [
-            {
-                name: "Our Mission",
-                link: "/about/mission",
-                description:
-                    "Empowering youth to create sustainable change through SDG initiatives",
-            },
-            {
-                name: "Vision",
-                link: "/about/vision",
-                description: "Our vision for a sustainable future",
-            },
-            {
-                name: "Our Team",
-                link: "/about/team",
-                description: "Meet the passionate individuals",
-            },
-        ],
+        link: "/abouts",
     },
 ]
 

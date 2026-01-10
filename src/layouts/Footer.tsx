@@ -1,7 +1,7 @@
 import { Button } from "#/components/ui/button"
 import { Input } from "#/components/ui/input"
 import { Separator } from "#/components/ui/separator"
-import { socialLinks } from "#/configs/constants/socials"
+import { SOCIALS } from "#/configs/socials"
 
 import { Mail } from "lucide-react"
 import Image from "next/image"
@@ -78,7 +78,7 @@ export default function Footer() {
 
                         {/* Social Links */}
                         <div className="flex gap-3">
-                            {socialLinks.map((social) => (
+                            {SOCIALS.map((social) => (
                                 <Link
                                     key={social.label}
                                     href={social.href}

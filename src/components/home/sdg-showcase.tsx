@@ -2,7 +2,7 @@
 
 import { Card } from "#/components/ui/card"
 import { Carousel, CarouselContent, CarouselItem } from "#/components/ui/carousel"
-import { SDGs } from "#/configs/constants/sdgs"
+import { SDGs } from "#/configs/sdgs"
 
 import { useRef } from "react"
 
