@@ -115,6 +115,7 @@ const navElements: NavElementType[] = [
         ],
     },
     { name: "Blogs", link: "/blogs" },
+    { name: "Flipbook", link: "/flipbook" },
     {
         name: "About Us",
         link: "/about",
