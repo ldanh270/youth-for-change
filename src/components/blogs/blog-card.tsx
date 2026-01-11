@@ -58,12 +58,12 @@ export default function BlogCard({ blog }: { blog: PageObjectResponse }) {
 
                 {/* Content Section */}
                 <CardHeader className="space-y-2 p-5 pb-2">
-                    {/* SDG Title */}
+                    {/* SDG tag name */}
                     <span className="text-muted-foreground text-xs font-semibold tracking-wider uppercase">
                         {SDGs[Number(tag) - 1]?.title || "General"}
                     </span>
 
-                    {/* Main Title */}
+                    {/* Main title */}
                     <CardTitle className="group-hover:text-primary line-clamp-2 text-xl leading-tight font-bold transition-colors">
                         {title}
                     </CardTitle>
