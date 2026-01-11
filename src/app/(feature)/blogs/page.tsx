@@ -15,7 +15,7 @@ export default async function BlogsPage({
         <div className="h-full">
             <div className="mx-auto flex h-full flex-col items-center justify-between">
                 {/* Header */}
-                <BlogHeader className="mx-5 mt-16" tag={tag} />
+                <BlogHeader className="animate-fade-in-up mx-5 mt-16" tag={tag} />
 
                 {/* Blog list */}
                 <BlogList
@@ -23,7 +23,7 @@ export default async function BlogsPage({
                     key={tag || "all"}
                     initialBlogs={blogs}
                     initialCursor={nextCursor ?? ""}
-                    className="mx-5 self-stretch md:mx-20"
+                    className="animate-fade-in-up mx-5 self-stretch md:mx-20"
                     tag={tag}
                 />
             </div>
