@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 
 export async function LatestBlogs() {
-    const blogs = await getCachedLatestPosts({ limit: 5 })
+    const blogs = await getCachedLatestPosts({ limit: 3 })
 
     return (
         <section className="bg-background py-16">
