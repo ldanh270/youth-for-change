@@ -29,7 +29,7 @@ export const TEAM_MEMBERS = [
     {
         name: "Hồ Thị Thảo Nguyên",
         role: "Member",
-        image: "/abouts/bim-avt.jpg",
+        image: "/abouts/thao_nguyen-avt.jpg",
         socials: [
             { label: "Facebook", link: "#" },
             { label: "LinkedIn", link: "#" },
