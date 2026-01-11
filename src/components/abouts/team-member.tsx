@@ -20,7 +20,7 @@ export default function TeamMembersSection() {
                     </div>
 
                     <div className="grid grid-cols-2 gap-8 sm:grid-cols-5 md:gap-12">
-                        {TEAM_MEMBERS.map(({ name, role, bio, image, socials }, index) => (
+                        {TEAM_MEMBERS.map(({ name, role, image, socials }, index) => (
                             <div
                                 key={name}
                                 className="group animate-fade-in-up opacity-0"
@@ -45,9 +45,6 @@ export default function TeamMembersSection() {
                                             {name}
                                         </h3>
                                         <p className="text-primary text-sm font-semibold">{role}</p>
-                                        <p className="text-muted-foreground text-sm leading-relaxed">
-                                            {bio}
-                                        </p>
 
                                         {/* Social Links */}
                                         <div className="flex gap-3 pt-2">

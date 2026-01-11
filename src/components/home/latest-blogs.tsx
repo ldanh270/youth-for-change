@@ -1,14 +1,15 @@
 import BlogCard from "#/components/blogs/blog-card"
 import { Button } from "#/components/ui/button"
-import { getCachedLatestPosts } from "#/libs/cache"
 
-import { isFullPage } from "@notionhq/client"
+import { PageObjectResponse, PartialPageObjectResponse, isFullPage } from "@notionhq/client"
 import { ArrowRight } from "lucide-react"
 import Link from "next/link"
 
-export async function LatestBlogs() {
-    const blogs = await getCachedLatestPosts({ limit: 3 })
-
+export async function LatestBlogs({
+    blogs,
+}: {
+    blogs: (PageObjectResponse | PartialPageObjectResponse)[]
+}) {
     return (
         <section className="bg-background py-16">
             <div className="container mx-auto px-4">
@@ -29,9 +30,12 @@ export async function LatestBlogs() {
                 </div>
 
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                    {blogs.blogs.filter(isFullPage).map((blog) => (
-                        <BlogCard blog={blog} key={blog.id} />
-                    ))}
+                    {blogs
+                        .filter(isFullPage)
+                        .slice(0, 3)
+                        .map((blog) => (
+                            <BlogCard blog={blog} key={blog.id} />
+                        ))}
                 </div>
             </div>
         </section>

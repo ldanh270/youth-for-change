@@ -57,7 +57,7 @@ export default async function BlogDetailsPage({ params }: BlogDetailsPageProps) 
     const { metadata, markdown } = blog
 
     return (
-        <div className="bg-background min-h-screen">
+        <div className="bg-background animate-fade-in-up min-h-screen">
             {/* Cover image */}
             {metadata.coverUrl && (
                 <div className="relative h-96 w-full overflow-hidden border-b">
