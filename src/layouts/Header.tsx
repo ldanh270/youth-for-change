@@ -6,7 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 export default function Header({
-    variant,
+    variant = "solid",
     className,
 }: {
     variant?: "solid" | "transparent"
@@ -15,7 +15,7 @@ export default function Header({
     return (
         <header
             className={cn(
-                "bg-background absolute top-0 z-40 w-full",
+                "bg-background group absolute top-0 z-40 w-full transition-all duration-300",
                 variant === "solid" ? "bg-background" : "text-foreground not-hover:bg-transparent",
                 className,
             )}
@@ -32,10 +32,10 @@ export default function Header({
                 </Link>
 
                 {/* Desktop Navigation */}
-                <Navbar className="order-3 md:order-0" />
+                <Navbar className="order-3 md:order-0" variant={variant} />
 
                 {/* Actions */}
-                <ActionButtions className="hidden lg:flex" />
+                <ActionButtions className="hidden lg:flex" variant={variant} />
             </div>
         </header>
     )
