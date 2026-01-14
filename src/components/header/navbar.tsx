@@ -122,9 +122,17 @@ const navElements: NavElementType[] = [
     },
 ]
 
-export default function Navbar({ className }: { className?: string }) {
+export default function Navbar({
+    className,
+    variant = "solid",
+}: {
+    className?: string
+    variant?: "solid" | "transparent"
+}) {
     return (
-        <div className={`${className}`}>
+        <div
+            className={`"block ${variant === "transparent" && "invisible opacity-0 group-hover:visible group-hover:opacity-100"} ${className}`}
+        >
             {/* Desktop navigation */}
             <NavigationMenu className="hidden lg:flex">
                 <NavigationMenuList>
