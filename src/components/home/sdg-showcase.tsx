@@ -8,7 +8,6 @@ import { useRef } from "react"
 
 import AutoScroll from "embla-carousel-auto-scroll"
 import Image from "next/image"
-import Link from "next/link"
 
 export function SDGShowcase() {
     const plugin = useRef(
@@ -50,19 +49,17 @@ export function SDGShowcase() {
                                 key={id}
                                 className="basis-1/3 pl-4 md:basis-1/5 lg:basis-1/8"
                             >
-                                <Link href={`/sdg/${id}`}>
-                                    <Card
-                                        className={`${color} cursor-pointer rounded-2xl border-0 transition-transform hover:scale-105`}
-                                    >
-                                        <Image
-                                            src={image}
-                                            alt="SDG Image"
-                                            width={300}
-                                            height={300}
-                                            className="rounded-2xl"
-                                        />
-                                    </Card>
-                                </Link>
+                                <Card
+                                    className={`${color} cursor-pointer rounded-2xl border-0 transition-transform hover:scale-105`}
+                                >
+                                    <Image
+                                        src={image}
+                                        alt="SDG Image"
+                                        width={300}
+                                        height={300}
+                                        className="rounded-2xl"
+                                    />
+                                </Card>
                             </CarouselItem>
                         ))}
                     </CarouselContent>
