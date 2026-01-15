@@ -33,6 +33,7 @@ export function StatsSection() {
     return (
         <section className="bg-primary text-primary-foreground py-16">
             <div className="container mx-auto px-4">
+                {/* Heading */}
                 <div className="mb-12 text-center">
                     <h2 className="font-title mb-4 text-3xl font-bold md:text-4xl">
                         Our Impact in Numbers
@@ -43,6 +44,7 @@ export function StatsSection() {
                     </p>
                 </div>
 
+                {/* Stats */}
                 <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
                     {stats.map((stat, index) => (
                         <div key={index} className="text-center">

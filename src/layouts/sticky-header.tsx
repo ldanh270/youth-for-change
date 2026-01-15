@@ -10,7 +10,7 @@ import { motion, useMotionValueEvent, useScroll } from "framer-motion"
 export default function StickyHeader() {
     const { scrollY } = useScroll()
 
-    // Default: Hide in top
+    // Hide in top (Default)
     const [hidden, setHidden] = useState(true)
 
     useMotionValueEvent(scrollY, "change", (latest: number) => {

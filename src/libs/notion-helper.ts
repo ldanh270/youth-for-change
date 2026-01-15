@@ -1,4 +1,3 @@
-// src/utils/notion-helper.ts
 import { Blog } from "#/types/blog"
 
 /**

@@ -15,23 +15,28 @@ export function HeroSection({
     blogs: (PageObjectResponse | PartialPageObjectResponse)[]
     className?: string
 }) {
+    const SLIDE_DELAY_TIME = 5000 // ms
+
     const [currentSlide, setCurrentSlide] = useState(0)
 
+    // Auto change slide after time
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentSlide((prev) => {
                 if (prev === blogs.length - 1) return 0
                 return prev + 1
             })
-        }, 5000)
+        }, SLIDE_DELAY_TIME)
         return () => clearInterval(timer)
     }, [blogs.length])
 
+    // Handle slide transition
     const nextSlide = () =>
         setCurrentSlide((prev) => {
             if (prev === blogs.length - 1) return 0
             return prev + 1
         })
+
     const prevSlide = () =>
         setCurrentSlide((prev) => {
             if (prev === 0) return blogs.length - 1

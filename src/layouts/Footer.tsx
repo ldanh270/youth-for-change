@@ -39,7 +39,7 @@ export default function Footer() {
             <div className="container mx-auto px-4 py-12">
                 <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
                     {/* Brand */}
-                    <div className="col-span-2">
+                    <section className="col-span-2">
                         <Link
                             href="/"
                             className="mb-4 flex flex-row items-center justify-start gap-3"
@@ -89,10 +89,10 @@ export default function Footer() {
                                 </Link>
                             ))}
                         </div>
-                    </div>
+                    </section>
 
                     {/* About */}
-                    <div>
+                    <section>
                         <h4 className="mb-4 font-semibold">About</h4>
                         <ul className="space-y-2">
                             {footerLinks.about.map((link) => (
@@ -106,10 +106,10 @@ export default function Footer() {
                                 </li>
                             ))}
                         </ul>
-                    </div>
+                    </section>
 
                     {/* Programs */}
-                    <div>
+                    <section>
                         <h4 className="mb-4 font-semibold">Programs</h4>
                         <ul className="space-y-2">
                             {footerLinks.programs.map((link) => (
@@ -123,10 +123,10 @@ export default function Footer() {
                                 </li>
                             ))}
                         </ul>
-                    </div>
+                    </section>
 
                     {/* Resources */}
-                    <div>
+                    <section>
                         <h4 className="mb-4 font-semibold">Resources</h4>
                         <ul className="space-y-2">
                             {footerLinks.resources.map((link) => (
@@ -140,10 +140,10 @@ export default function Footer() {
                                 </li>
                             ))}
                         </ul>
-                    </div>
+                    </section>
 
                     {/* Legal */}
-                    <div>
+                    <section>
                         <h4 className="mb-4 font-semibold">Legal</h4>
                         <ul className="space-y-2">
                             {footerLinks.legal.map((link) => (
@@ -157,7 +157,7 @@ export default function Footer() {
                                 </li>
                             ))}
                         </ul>
-                    </div>
+                    </section>
                 </div>
 
                 <Separator className="my-8" />

@@ -1,6 +1,6 @@
 import { Skeleton } from "#/components/ui/skeleton"
 
-export default function HomeLoading() {
+export default function LoadingPage() {
     return (
         <main className="container mx-auto space-y-12 px-4 py-8 md:px-8 lg:py-12">
             {/* Hero Section Skeleton */}
@@ -9,7 +9,7 @@ export default function HomeLoading() {
                 <Skeleton className="h-64 w-full rounded-lg md:h-96" />
             </section>
 
-            {/* Movie Sections Skeleton */}
+            {/* Element Sections Skeleton */}
             {[1, 2, 3].map((section) => (
                 <section key={section} className="space-y-6">
                     <div className="flex items-center justify-between">
