@@ -1,4 +1,3 @@
-// lib/posts.ts
 import { getLatestBlogs } from "#/libs/notion"
 
 import { unstable_cache } from "next/cache"

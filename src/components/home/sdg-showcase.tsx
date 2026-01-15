@@ -22,7 +22,7 @@ export function SDGShowcase() {
     return (
         <section className="bg-secondary py-16">
             <div className="container mx-auto px-4">
-                {/* Title */}
+                {/* Heading */}
                 <div className="mb-12 text-center">
                     <h2 className="font-title text-foreground mb-4 text-3xl font-bold md:text-4xl">
                         17 Sustainable Development Goals

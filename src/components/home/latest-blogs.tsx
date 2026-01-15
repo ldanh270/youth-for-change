@@ -13,6 +13,7 @@ export async function LatestBlogs({
     return (
         <section className="bg-background py-16">
             <div className="container mx-auto px-4">
+                {/* Heading */}
                 <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between">
                     <div>
                         <h2 className="font-title text-foreground mb-4 text-3xl font-bold md:text-4xl">
@@ -29,6 +30,7 @@ export async function LatestBlogs({
                     </Button>
                 </div>
 
+                {/* Page list */}
                 <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {blogs
                         .filter(isFullPage)

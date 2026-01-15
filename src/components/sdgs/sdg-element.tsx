@@ -23,6 +23,7 @@ export default function SDGElement({
 }: ISDGElement) {
     return (
         <div key={id} className={`${className}`}>
+            {/* SDG Detail Card */}
             <Card className="group overflow-hidden border-0 shadow-md transition-all duration-500 hover:shadow-2xl">
                 <CardContent className="p-0">
                     <div className="flex flex-col md:flex-row">

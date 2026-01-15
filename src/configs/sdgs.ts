@@ -1,3 +1,6 @@
+/**
+ * SDG element details
+ */
 export const SDGs = [
     {
         id: 1,
