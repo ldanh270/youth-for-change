@@ -30,7 +30,7 @@ export default function ActionButtions({
 
             {/* Join */}
             <Button asChild className="hidden md:inline-flex">
-                <Link href="/signup">Join Us</Link>
+                <Link href="#">Join Us</Link>
             </Button>
         </div>
     )

@@ -1,5 +1,7 @@
+import { trackingId } from "#/configs/env.config"
 import StickyHeader from "#/layouts/sticky-header"
 
+import { GoogleAnalytics } from "@next/third-parties/google"
 import type { Metadata } from "next"
 import { ThemeProvider } from "next-themes"
 import { Geist, Geist_Mono, Montserrat } from "next/font/google"
@@ -37,15 +39,11 @@ export default function RootLayout({
             <body
                 className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased`}
             >
-                <ThemeProvider
-                    attribute="class"
-                    defaultTheme="system"
-                    enableSystem
-                    disableTransitionOnChange
-                >
+                <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange>
                     <div className="flex min-h-screen flex-col">
                         <StickyHeader />
                         {children}
+                        <GoogleAnalytics gaId={trackingId} />
                     </div>
                 </ThemeProvider>
             </body>

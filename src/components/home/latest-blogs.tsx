@@ -14,6 +14,7 @@ export async function LatestBlogs({
         <section className="bg-background py-16">
             <div className="container mx-auto px-4">
                 {/* Heading */}
+                {/* Heading */}
                 <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between">
                     <div>
                         <h2 className="font-title text-foreground mb-4 text-3xl font-bold md:text-4xl">
@@ -23,7 +24,7 @@ export async function LatestBlogs({
                             Stay updated with our latest initiatives and announcements
                         </p>
                     </div>
-                    <Button variant="outline" asChild className="mt-4 md:mt-0">
+                    <Button variant="outline" asChild className="mt-4 hidden md:mt-0 md:flex">
                         <Link href="/blogs">
                             View All Blogs <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
@@ -31,7 +32,7 @@ export async function LatestBlogs({
                 </div>
 
                 {/* Page list */}
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid gap-10 md:grid-cols-1 md:px-10 lg:grid-cols-3 lg:gap-6">
                     {blogs
                         .filter(isFullPage)
                         .slice(0, 3)
@@ -39,6 +40,11 @@ export async function LatestBlogs({
                             <BlogCard blog={blog} key={blog.id} />
                         ))}
                 </div>
+                <Button variant="outline" asChild className="mt-4 w-full md:mt-0 md:hidden">
+                    <Link href="/blogs">
+                        View All Blogs <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                </Button>
             </div>
         </section>
     )

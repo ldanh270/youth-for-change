@@ -19,7 +19,7 @@ export default function TeamMembersSection() {
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-8 sm:grid-cols-5 md:gap-12">
+                    <div className="flex flex-wrap justify-center gap-8 px-5 *:w-full *:sm:w-[calc(100%/3-3rem)] md:gap-12 *:lg:w-[calc(100%/5-3rem)]">
                         {TEAM_MEMBERS.map(({ name, role, image, socials }, index) => (
                             <div
                                 key={name}
