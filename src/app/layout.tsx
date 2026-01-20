@@ -37,12 +37,7 @@ export default function RootLayout({
             <body
                 className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} antialiased`}
             >
-                <ThemeProvider
-                    attribute="class"
-                    defaultTheme="system"
-                    enableSystem
-                    disableTransitionOnChange
-                >
+                <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange>
                     <div className="flex min-h-screen flex-col">
                         <StickyHeader />
                         {children}
