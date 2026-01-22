@@ -6,7 +6,7 @@ import Footer from "#/layouts/Footer"
 import Header from "#/layouts/Header"
 import { getCachedLatestPosts } from "#/libs/cache"
 
-export default async function Home() {
+export default async function HomePage() {
     const { blogs } = await getCachedLatestPosts({ limit: 6 })
 
     return (
