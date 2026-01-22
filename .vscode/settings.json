@@ -78,5 +78,5 @@
     "editor.definitionLinkOpensInPeek": false,
     "typescript.tsserver.watchOptions": "vscode",
     "C_Cpp.intelliSenseMemoryLimit": 8192,
-    "i18n-ally.localesPaths": ["src/i18n"]
+    "i18n-ally.localesPaths": ["src/i18n", "src/messages"]
 }
