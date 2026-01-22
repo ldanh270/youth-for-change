@@ -1,9 +1,12 @@
 import { Badge } from "#/components/ui/badge"
 import { SDGs } from "#/configs/sdgs"
 
+import { useTranslations } from "next-intl"
 import Link from "next/link"
 
 export default function BlogHeader({ className, tag }: { className?: string; tag?: string }) {
+    const t = useTranslations("BlogsPage")
+
     const checkTags = ({ id }: { id: number }) => {
         if (tag) {
             if (tag === id.toString()) return `/blogs`
@@ -16,13 +19,12 @@ export default function BlogHeader({ className, tag }: { className?: string; tag
         <div className={`mb-16 space-y-4 text-center ${className}`}>
             {/* Title */}
             <h1 className="text-foreground font-title text-4xl font-bold md:text-5xl lg:text-6xl">
-                Blogs
+                {t("Title")}
             </h1>
 
             {/* Description */}
             <p className="text-muted-foreground mx-auto max-w-3xl text-lg leading-relaxed">
-                Learn about sustainable development goals, inspiring stories, and useful knowledge
-                to create positive change for your community together.
+                {t("Description")}
             </p>
 
             {/* Badges */}
