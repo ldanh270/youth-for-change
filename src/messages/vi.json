@@ -1,0 +1,211 @@
+{
+    "Core": {
+        "lastUpdated": "Chỉnh sửa gần nhất",
+        "readMore": "Xem thêm",
+        "learnMore": "Xem thêm",
+        "Goal": "Mục tiêu",
+        "SDGs": {
+            "1": {
+                "title": "Xóa nghèo",
+                "description": "Bảo vệ, khôi phục và thúc đẩy sử dụng bền vững các hệ sinh thái trên cạn, quản lý rừng, chống sa mạc hóa, ngăn chặn và đẩy lùi suy thoái đất, cũng như ngăn chặn mất mát đa dạng sinh học là chìa khóa cho phát triển bền vững."
+            },
+            "2": {
+                "title": "Xóa đói",
+                "description": "Bảo vệ, khôi phục và thúc đẩy sử dụng bền vững các hệ sinh thái trên cạn, quản lý rừng, chống sa mạc hóa, ngăn chặn và đẩy lùi suy thoái đất, cũng như ngăn chặn mất mát đa dạng sinh học là chìa khóa cho phát triển bền vững."
+            },
+            "3": {
+                "title": "Sức khỏe tốt và Cuộc sống hạnh phúc",
+                "description": "Bảo vệ, khôi phục và thúc đẩy sử dụng bền vững các hệ sinh thái trên cạn, quản lý rừng, chống sa mạc hóa, ngăn chặn và đẩy lùi suy thoái đất, cũng như ngăn chặn mất mát đa dạng sinh học là chìa khóa cho phát triển bền vững."
+            },
+            "4": {
+                "title": "Giáo dục chất lượng",
+                "description": "Bảo vệ, khôi phục và thúc đẩy sử dụng bền vững các hệ sinh thái trên cạn, quản lý rừng, chống sa mạc hóa, ngăn chặn và đẩy lùi suy thoái đất, cũng như ngăn chặn mất mát đa dạng sinh học là chìa khóa cho phát triển bền vững."
+            },
+            "5": {
+                "title": "Bình đẳng giới",
+                "description": "Bảo vệ, khôi phục và thúc đẩy sử dụng bền vững các hệ sinh thái trên cạn, quản lý rừng, chống sa mạc hóa, ngăn chặn và đẩy lùi suy thoái đất, cũng như ngăn chặn mất mát đa dạng sinh học là chìa khóa cho phát triển bền vững."
+            },
+            "6": {
+                "title": "Nước sạch và Vệ sinh",
+                "description": "Bảo vệ, khôi phục và thúc đẩy sử dụng bền vững các hệ sinh thái trên cạn, quản lý rừng, chống sa mạc hóa, ngăn chặn và đẩy lùi suy thoái đất, cũng như ngăn chặn mất mát đa dạng sinh học là chìa khóa cho phát triển bền vững."
+            },
+            "7": {
+                "title": "Năng lượng sạch và giá cả hợp lý",
+                "description": "Bảo vệ, khôi phục và thúc đẩy sử dụng bền vững các hệ sinh thái trên cạn, quản lý rừng, chống sa mạc hóa, ngăn chặn và đẩy lùi suy thoái đất, cũng như ngăn chặn mất mát đa dạng sinh học là chìa khóa cho phát triển bền vững."
+            },
+            "8": {
+                "title": "Công việc tốt và Tăng trưởng kinh tế",
+                "description": "Bảo vệ, khôi phục và thúc đẩy sử dụng bền vững các hệ sinh thái trên cạn, quản lý rừng, chống sa mạc hóa, ngăn chặn và đẩy lùi suy thoái đất, cũng như ngăn chặn mất mát đa dạng sinh học là chìa khóa cho phát triển bền vững."
+            },
+            "9": {
+                "title": "Công nghiệp, Sáng tạo và Phát triển hạ tầng",
+                "description": "Bảo vệ, khôi phục và thúc đẩy sử dụng bền vững các hệ sinh thái trên cạn, quản lý rừng, chống sa mạc hóa, ngăn chặn và đẩy lùi suy thoái đất, cũng như ngăn chặn mất mát đa dạng sinh học là chìa khóa cho phát triển bền vững."
+            },
+            "10": {
+                "title": "Giảm bất bình đẳng",
+                "description": "Bảo vệ, khôi phục và thúc đẩy sử dụng bền vững các hệ sinh thái trên cạn, quản lý rừng, chống sa mạc hóa, ngăn chặn và đẩy lùi suy thoái đất, cũng như ngăn chặn mất mát đa dạng sinh học là chìa khóa cho phát triển bền vững."
+            },
+            "11": {
+                "title": "Các thành phố và cộng đồng bền vững",
+                "description": "Bảo vệ, khôi phục và thúc đẩy sử dụng bền vững các hệ sinh thái trên cạn, quản lý rừng, chống sa mạc hóa, ngăn chặn và đẩy lùi suy thoái đất, cũng như ngăn chặn mất mát đa dạng sinh học là chìa khóa cho phát triển bền vững."
+            },
+            "12": {
+                "title": "Tiêu thụ và sản xuất có trách nhiệm",
+                "description": "Bảo vệ, khôi phục và thúc đẩy sử dụng bền vững các hệ sinh thái trên cạn, quản lý rừng, chống sa mạc hóa, ngăn chặn và đẩy lùi suy thoái đất, cũng như ngăn chặn mất mát đa dạng sinh học là chìa khóa cho phát triển bền vững."
+            },
+            "13": {
+                "title": "Hành động về khí hậu",
+                "description": "Bảo vệ, khôi phục và thúc đẩy sử dụng bền vững các hệ sinh thái trên cạn, quản lý rừng, chống sa mạc hóa, ngăn chặn và đẩy lùi suy thoái đất, cũng như ngăn chặn mất mát đa dạng sinh học là chìa khóa cho phát triển bền vững."
+            },
+            "14": {
+                "title": "Tài nguyên và môi trường biển",
+                "description": "Bảo vệ, khôi phục và thúc đẩy sử dụng bền vững các hệ sinh thái trên cạn, quản lý rừng, chống sa mạc hóa, ngăn chặn và đẩy lùi suy thoái đất, cũng như ngăn chặn mất mát đa dạng sinh học là chìa khóa cho phát triển bền vững."
+            },
+            "15": {
+                "title": "Tài nguyên và môi trường trên đất liền",
+                "description": "Bảo vệ, khôi phục và thúc đẩy sử dụng bền vững các hệ sinh thái trên cạn, quản lý rừng, chống sa mạc hóa, ngăn chặn và đẩy lùi suy thoái đất, cũng như ngăn chặn mất mát đa dạng sinh học là chìa khóa cho phát triển bền vững."
+            },
+            "16": {
+                "title": "Hòa bình, Công lý và Thể chế vững mạnh",
+                "description": "Bảo vệ, khôi phục và thúc đẩy sử dụng bền vững các hệ sinh thái trên cạn, quản lý rừng, chống sa mạc hóa, ngăn chặn và đẩy lùi suy thoái đất, cũng như ngăn chặn mất mát đa dạng sinh học là chìa khóa cho phát triển bền vững."
+            },
+            "17": {
+                "title": "Quan hệ đối tác vì các mục tiêu",
+                "description": "Bảo vệ, khôi phục và thúc đẩy sử dụng bền vững các hệ sinh thái trên cạn, quản lý rừng, chống sa mạc hóa, ngăn chặn và đẩy lùi suy thoái đất, cũng như ngăn chặn mất mát đa dạng sinh học là chìa khóa cho phát"
+            }
+        }
+    },
+    "Language": {
+        "Title": "Chọn ngôn ngữ",
+        "Description": "Chọn ngôn ngữ bạn muốn sử dụng cho giao diện."
+    },
+    "Header": {
+        "Navbar": {
+            "sdgs": "SDGs",
+            "blogs": "Bài viết",
+            "flipbook": "Flipbook",
+            "about": "Về chúng tôi"
+        }
+    },
+
+    "Footer": {
+        "brand": {
+            "description": "Dự án cộng đồng nhằm nâng cao kiến thức SDG cho sinh viên UD–UFLS, nuôi dưỡng thái độ tích cực và thúc đẩy lối sống bền vững.",
+            "logoAlt": "Logo Youth For Change"
+        },
+        "newsletter": {
+            "title": "Đăng ký nhận bản tin",
+            "placeholder": "Nhập email của bạn",
+            "buttonLabel": "Đăng ký"
+        },
+        "copyright": "Bản quyền thuộc về Youth For Change",
+        "sections": {
+            "about": {
+                "title": "Giới thiệu",
+                "links": {
+                    "mission": "Sứ mệnh",
+                    "team": "Đội ngũ",
+                    "partners": "Đối tác",
+                    "careers": "Tuyển dụng"
+                }
+            },
+            "programs": {
+                "title": "Chương trình",
+                "links": {
+                    "projects": "Dự án SDG",
+                    "volunteer": "Tình nguyện",
+                    "summit": "Hội nghị trẻ",
+                    "training": "Đào tạo"
+                }
+            },
+            "resources": {
+                "title": "Tài nguyên",
+                "links": {
+                    "news": "Tin tức",
+                    "blog": "Blog",
+                    "reports": "Báo cáo",
+                    "faqs": "Hỏi đáp"
+                }
+            },
+            "legal": {
+                "title": "Pháp lý",
+                "links": {
+                    "privacy": "Chính sách bảo mật",
+                    "terms": "Điều khoản dịch vụ",
+                    "cookies": "Chính sách Cookie"
+                }
+            }
+        }
+    },
+
+    "HomePage": {
+        "SDGsShowcase": {
+            "Title": "17 mục tiêu phát triển bền vững",
+            "Subtitle": "Khám phá các sáng kiến ​​của chúng tôi phù hợp với mục tiêu Phát triển Bền vững của Liên Hợp Quốc"
+        },
+        "StatsSection": {
+            "heading": "Tác động qua những con số",
+            "subheading": "Chúng ta đang cùng nhau tạo ra sự thay đổi rõ rệt trong các cộng đồng trên toàn cầu",
+            "items": {
+                "volunteers": {
+                    "value": "10.000+",
+                    "label": "Tình nguyện viên",
+                    "description": "Những nhà kiến tạo trẻ toàn cầu"
+                },
+                "countries": {
+                    "value": "50+",
+                    "label": "Quốc gia",
+                    "description": "Tầm ảnh hưởng vươn xa"
+                },
+                "projects": {
+                    "value": "200+",
+                    "label": "Dự án",
+                    "description": "Sáng kiến theo mục tiêu SDGs"
+                },
+                "sdgs": {
+                    "value": "17",
+                    "label": "Mục tiêu SDGs",
+                    "description": "Tập trung phát triển bền vững"
+                }
+            }
+        },
+        "LatestBlogs": {
+            "Title": "Các bài viết mới nhất",
+            "Description": "Hãy luôn cập nhật những sáng kiến ​​và thông báo mới nhất của chúng tôi.",
+            "ViewAll": "Xem tất cả"
+        }
+    },
+
+    "SDGsPage": {
+        "Heading": {
+            "Badge": "Các mục tiêu phát triển bền vững",
+            "Title": "17 Mục tiêu để thay đổi thế giới",
+            "Description": "Các Mục tiêu Phát triển Bền vững là lời kêu gọi hành động toàn cầu nhằm xóa đói giảm nghèo, bảo vệ hành tinh và đảm bảo đến năm 2030 tất cả mọi người được hưởng hòa bình và thịnh vượng"
+        }
+    },
+
+    "AboutPage": {
+        "HeroSection": {
+            "title": "Gặp gỡ <highlight>chúng tôi</highlight>",
+            "description": "Chúng tôi là cộng đồng những người trẻ đam mê tạo ra thay đổi tích cực, hướng tới các mục tiêu phát triển bền vững của Liên Hợp Quốc",
+            "imageAlt": "Hình ảnh giới thiệu đội ngũ"
+        },
+        "TeamMembers": {
+            "title": "Thành viên",
+            "description": "Chúng tôi là những sinh viên trẻ đến từ UFLS",
+            "roles": {
+                "leader": "Trưởng nhóm",
+                "member": "Thành viên"
+            }
+        },
+        "Mission": {
+            "Title": "Chúng tôi chỉ mang lại kết quả.",
+            "Description": "Chúng tôi cam kết mang đến những giải pháp bền vững và hiệu quả, không chỉ là những lời hứa suông, mà là những hành động cụ thể, có thể đo lường được"
+        }
+    },
+
+    "BlogsPage": {
+        "Title": "Bài viết",
+        "Description": "Tìm hiểu về các mục tiêu phát triển bền vững, những câu chuyện truyền cảm hứng và kiến ​​thức hữu ích để cùng nhau tạo ra những thay đổi tích cực cho cộng đồng của bạn"
+    }
+}

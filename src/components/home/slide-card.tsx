@@ -1,8 +1,8 @@
 import { Badge } from "#/components/ui/badge"
 import { Button } from "#/components/ui/button"
-import { SDGs } from "#/configs/sdgs"
 
 import { PageObjectResponse } from "@notionhq/client"
+import { useTranslations } from "next-intl"
 import Link from "next/link"
 
 export default function SlideCard({
@@ -12,6 +12,8 @@ export default function SlideCard({
     blog: PageObjectResponse
     className: string
 }) {
+    const t = useTranslations("Core")
+
     const title =
         blog.properties?.Title?.type === "title"
             ? blog.properties.Title.title[0]?.plain_text
@@ -51,7 +53,7 @@ export default function SlideCard({
 
                         {/* SDG tag */}
                         <span className="text-xs font-semibold tracking-wider text-white uppercase">
-                            {SDGs[Number(tag) - 1]?.title || "General"}
+                            {t(`SDGs.${tag}.title`)}
                         </span>
                     </div>
 
@@ -65,7 +67,7 @@ export default function SlideCard({
 
                     {/* Read more button */}
                     <Button asChild size="lg" className="px-8 text-lg">
-                        <Link href={`/blogs/${slug}`}>Read more</Link>
+                        <Link href={`/blogs/${slug}`}>{t("readMore")}</Link>
                     </Button>
                 </div>
             </div>

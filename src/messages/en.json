@@ -1,0 +1,229 @@
+{
+    "Core": {
+        "lastUpdated": "Last updated",
+        "readMore": "Read more",
+        "learnMore": "Learn more",
+        "Goal": "Goal",
+        "SDGs": {
+            "1": {
+                "title": "No Poverty",
+                "description": "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development."
+            },
+
+            "2": {
+                "title": "Zero Hunger",
+                "description": "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development."
+            },
+
+            "3": {
+                "title": "Good Health and Well-Being",
+                "description": "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development."
+            },
+
+            "4": {
+                "title": "Quality Education",
+                "description": "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development."
+            },
+
+            "5": {
+                "title": "Gender Equality",
+                "description": "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development."
+            },
+
+            "6": {
+                "title": "Clean Water and Sanitation",
+                "description": "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development."
+            },
+
+            "7": {
+                "title": "Affordable and Clean Energy",
+                "description": "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development."
+            },
+
+            "8": {
+                "title": "Decent Work and Economic Growth",
+                "description": "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development."
+            },
+
+            "9": {
+                "title": "Industry, Innovation and Infrastructure",
+                "description": "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development."
+            },
+
+            "10": {
+                "title": "Reduced Inequality",
+                "description": "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development."
+            },
+
+            "11": {
+                "title": "Sustainable Cities and Communities",
+                "description": "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development."
+            },
+
+            "12": {
+                "title": "Responsible Consumption and Production",
+                "description": "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development."
+            },
+
+            "13": {
+                "title": "Climate Action",
+                "description": "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development."
+            },
+
+            "14": {
+                "title": "Life Below Water",
+                "description": "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development."
+            },
+
+            "15": {
+                "title": "Life on Land",
+                "description": "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development."
+            },
+
+            "16": {
+                "title": "Peace, Justice and Strong Institutions",
+                "description": "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development."
+            },
+
+            "17": {
+                "title": "Partnerships for the Goals",
+                "description": "Protecting, restoring, and promoting the sustainable use of terrestrial ecosystems, managing forests, combating desertification, halting and reversing land degradation, and halting biodiversity loss are key to sustainable development."
+            }
+        }
+    },
+
+    "Language": {
+        "Title": "Choose language",
+        "Description": "Select your preferred language for the interface."
+    },
+
+    "Header": {
+        "Navbar": {
+            "sdgs": "SDGs",
+            "blogs": "Blogs",
+            "flipbook": "Flipbook",
+            "about": "About Us"
+        }
+    },
+
+    "Footer": {
+        "brand": {
+            "description": "A community project that enhances UD–UFLS students’ SDG knowledge, fosters positive attitudes, and promotes sustainable practices in daily life.",
+            "logoAlt": "Youth For Change Logo"
+        },
+        "newsletter": {
+            "title": "Subscribe to our newsletter",
+            "placeholder": "Enter your email",
+            "buttonLabel": "Subscribe"
+        },
+        "copyright": "All rights reserved.",
+        "sections": {
+            "about": {
+                "title": "About",
+                "links": {
+                    "mission": "Our Mission",
+                    "team": "Our Team",
+                    "partners": "Partners",
+                    "careers": "Careers"
+                }
+            },
+            "programs": {
+                "title": "Programs",
+                "links": {
+                    "projects": "SDG Projects",
+                    "volunteer": "Volunteer",
+                    "summit": "Youth Summit",
+                    "training": "Training"
+                }
+            },
+            "resources": {
+                "title": "Resources",
+                "links": {
+                    "news": "News",
+                    "blog": "Blog",
+                    "reports": "Reports",
+                    "faqs": "FAQs"
+                }
+            },
+            "legal": {
+                "title": "Legal",
+                "links": {
+                    "privacy": "Privacy Policy",
+                    "terms": "Terms of Service",
+                    "cookies": "Cookie Policy"
+                }
+            }
+        }
+    },
+
+    "HomePage": {
+        "SDGsShowcase": {
+            "Title": "Sustainable Development Goals",
+            "Subtitle": "Explore our initiatives aligned with the United Nations Sustainable Development Goals"
+        },
+        "StatsSection": {
+            "heading": "Our Impact in Numbers",
+            "subheading": "Together, we're making a measurable difference in communities around the world",
+            "items": {
+                "volunteers": {
+                    "value": "10,000+",
+                    "label": "Active Volunteers",
+                    "description": "Young changemakers worldwide"
+                },
+                "countries": {
+                    "value": "50+",
+                    "label": "Countries",
+                    "description": "Global reach and impact"
+                },
+                "projects": {
+                    "value": "200+",
+                    "label": "Projects",
+                    "description": "SDG-aligned initiatives"
+                },
+                "sdgs": {
+                    "value": "17",
+                    "label": "SDGs Addressed",
+                    "description": "Comprehensive sustainability focus"
+                }
+            }
+        },
+        "LatestBlogs": {
+            "Title": "Latest Blogs",
+            "Description": "Stay updated with our latest initiatives and announcements",
+            "ViewAll": "View All Blogs"
+        }
+    },
+
+    "SDGsPage": {
+        "Heading": {
+            "Badge": "UN Sustainable Development Goals",
+            "Title": "17 Goals to Transform Our World",
+            "Description": "The Sustainable Development Goals are a universal call to action to end poverty, protect the planet and ensure that by 2030 all people enjoy peace and prosperity"
+        }
+    },
+
+    "AboutPage": {
+        "HeroSection": {
+            "title": "Let's Meet <highlight>Our Team</highlight>",
+            "description": "We are a community of young people passionate about creating positive change, working towards the United Nations Sustainable Development Goals",
+            "imageAlt": "Our team hero image"
+        },
+        "TeamMembers": {
+            "title": "Team members",
+            "description": "We're lucky to be supported by some of the best investors in the world",
+            "roles": {
+                "founder": "Leader",
+                "member": "Member"
+            }
+        },
+        "Mission": {
+            "Title": "We only deliver results",
+            "Description": "We are committed to delivering sustainable and effective solutions, not just empty promises, but concrete, measurable actions"
+        }
+    },
+
+    "BlogsPage": {
+        "Title": "Blogs",
+        "Description": "Learn about sustainable development goals, inspiring stories, and useful knowledge to create positive change for your community together"
+    }
+}

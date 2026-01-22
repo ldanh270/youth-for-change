@@ -1,4 +1,5 @@
 import { ModeToggle } from "#/components/themes/mode-toggle"
+import { LanguageSwitcher } from "#/components/translations/LanguageSwitcher"
 import { Button } from "#/components/ui/button"
 
 import { Globe, Search } from "lucide-react"
@@ -16,22 +17,20 @@ export default function ActionButtions({
             className={`items-center space-x-2 ${variant === "transparent" && "invisible opacity-0 group-hover:visible group-hover:opacity-100"} ${className}`}
         >
             {/* Search */}
-            <Button variant="ghost" size="icon">
+            {/* <Button variant="ghost" size="icon">
                 <Search className="h-5 w-5" />
-            </Button>
+            </Button> */}
 
             {/* Theme */}
             <ModeToggle />
 
             {/* Language */}
-            <Button variant="ghost" size="icon">
-                <Globe className="h-5 w-5" />
-            </Button>
+            <LanguageSwitcher />
 
             {/* Join */}
-            <Button asChild className="hidden md:inline-flex">
+            {/* <Button asChild className="hidden md:inline-flex">
                 <Link href="#">Join Us</Link>
-            </Button>
+            </Button> */}
         </div>
     )
 }

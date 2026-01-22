@@ -3,6 +3,7 @@ import { Button } from "#/components/ui/button"
 
 import { PageObjectResponse, PartialPageObjectResponse, isFullPage } from "@notionhq/client"
 import { ArrowRight } from "lucide-react"
+import { getTranslations } from "next-intl/server"
 import Link from "next/link"
 
 export async function LatestBlogs({
@@ -10,23 +11,23 @@ export async function LatestBlogs({
 }: {
     blogs: (PageObjectResponse | PartialPageObjectResponse)[]
 }) {
+    const t = await getTranslations("HomePage.LatestBlogs")
+
     return (
         <section className="bg-background py-16">
             <div className="container mx-auto px-4">
                 {/* Heading */}
-                {/* Heading */}
                 <div className="mb-12 flex flex-col md:flex-row md:items-end md:justify-between">
                     <div>
                         <h2 className="font-title text-foreground mb-4 text-3xl font-bold md:text-4xl">
-                            Latest Blogs
+                            {t("Title")}
                         </h2>
-                        <p className="text-muted-foreground max-w-xl">
-                            Stay updated with our latest initiatives and announcements
-                        </p>
+                        <p className="text-muted-foreground max-w-xl">{t("Description")}</p>
                     </div>
                     <Button variant="outline" asChild className="mt-4 hidden md:mt-0 md:flex">
                         <Link href="/blogs">
-                            View All Blogs <ArrowRight className="ml-2 h-4 w-4" />
+                            {t("ViewAll")}
+                            <ArrowRight className="ml-2 h-4 w-4" />
                         </Link>
                     </Button>
                 </div>
@@ -42,7 +43,7 @@ export async function LatestBlogs({
                 </div>
                 <Button variant="outline" asChild className="mt-4 w-full md:mt-0 md:hidden">
                     <Link href="/blogs">
-                        View All Blogs <ArrowRight className="ml-2 h-4 w-4" />
+                        {t("ViewAll")} <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                 </Button>
             </div>

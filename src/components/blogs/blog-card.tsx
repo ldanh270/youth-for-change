@@ -1,14 +1,16 @@
 import { Badge } from "#/components/ui/badge"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "#/components/ui/card"
-import { SDGs } from "#/configs/sdgs"
 import { timeFormatter } from "#/libs/utils"
 
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints"
 import { ArrowRight } from "lucide-react"
+import { useTranslations } from "next-intl"
 import Image from "next/image"
 import Link from "next/link"
 
 export default function BlogCard({ blog }: { blog: PageObjectResponse }) {
+    const t = useTranslations("Core")
+
     const title =
         blog.properties?.Title?.type === "title"
             ? blog.properties.Title.title[0]?.plain_text
@@ -60,7 +62,7 @@ export default function BlogCard({ blog }: { blog: PageObjectResponse }) {
                 <CardHeader className="space-y-2 p-5 pb-2">
                     {/* SDG tag name */}
                     <span className="text-muted-foreground text-xs font-semibold tracking-wider uppercase">
-                        {SDGs[Number(tag) - 1]?.title || "General"}
+                        {t(`SDGs.${tag}.title`)}
                     </span>
 
                     {/* Main title */}
@@ -94,12 +96,15 @@ export default function BlogCard({ blog }: { blog: PageObjectResponse }) {
                                     d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                                 />
                             </svg>
-                            <span>Last updated: {timeFormatter({ time: lastEditedTime })}</span>
+                            <span>
+                                {t("lastUpdated")}: {timeFormatter({ time: lastEditedTime })}
+                            </span>
                         </div>
                     )}
 
                     <div className="text-primary ml-auto flex items-center justify-end gap-1 font-medium opacity-0 transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100">
-                        Read more <ArrowRight className="h-3.5 w-3.5" />
+                        {t("readMore")}
+                        <ArrowRight className="h-3.5 w-3.5" />
                     </div>
                 </CardFooter>
             </Card>
