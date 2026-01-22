@@ -2,6 +2,7 @@
 
 import { Card, CardContent } from "#/components/ui/card"
 
+import { useTranslations } from "next-intl"
 import Image from "next/image"
 
 interface ISDGElement {
@@ -21,6 +22,8 @@ export default function SDGElement({
     image,
     className,
 }: ISDGElement) {
+    const t = useTranslations("Core")
+
     return (
         <div key={id} className={`${className}`}>
             {/* SDG Detail Card */}
@@ -37,7 +40,7 @@ export default function SDGElement({
                         {/* Content Section */}
                         <div className="flex flex-1 flex-col justify-center p-8">
                             <h2 className={`text-foreground mb-4 text-2xl font-bold md:text-3xl`}>
-                                Goal {id}: {title}
+                                {t("Goal")} {id}: {title}
                             </h2>
                             <p className="text-muted-foreground mb-6 leading-relaxed">
                                 {description}
@@ -46,7 +49,7 @@ export default function SDGElement({
                                 <button
                                     className={`group/btn flex items-center gap-2 rounded-full bg-${color} cursor-pointer px-6 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl`}
                                 >
-                                    <span>Learn More</span>
+                                    <span>{t("learnMore")}</span>
                                     <span className="pl-px">→</span>
                                 </button>
                                 <div className="bg-muted text-muted-foreground hover:bg-accent hover:text-accent-foreground flex h-12 w-12 cursor-pointer items-center justify-center rounded-full transition-colors">
