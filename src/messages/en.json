@@ -1,6 +1,27 @@
 {
-    "HomePage": {},
+    "Language": {
+        "Title": "Choose language",
+        "Description": "Select your preferred language for the interface."
+    },
+    "Header": {
+        "Navbar": {
+            "sdgs": "SDGs",
+            "blogs": "Blogs",
+            "flipbook": "Flipbook",
+            "about": "About Us"
+        }
+    },
+
+    "HomePage": {
+        "SDGsShowcase": {
+            "Title": "Sustainable Development Goals",
+            "Subtitle": "Explore our initiatives aligned with the United Nations Sustainable Development Goals"
+        }
+    },
+
     "SDGsPage": {},
+
     "AboutPage": {},
+
     "BlogsPage": {}
 }

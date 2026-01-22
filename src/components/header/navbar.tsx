@@ -3,36 +3,27 @@ import { Accordion, AccordionItem, AccordionTrigger } from "#/components/ui/acco
 import { Button } from "#/components/ui/button"
 import {
     NavigationMenu,
-    NavigationMenuContent,
     NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuList,
-    NavigationMenuTrigger,
 } from "#/components/ui/navigation-menu"
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "#/components/ui/sheet"
 
 import { AccordionContent } from "@radix-ui/react-accordion"
 import { Menu } from "lucide-react"
+import { useTranslations } from "next-intl"
 import Link from "next/link"
 
 type NavElementType = {
-    name: string
-    link: string
-    description?: string
+    key: string
     childs?: NavElementType[]
 }
 
 const navElements: NavElementType[] = [
-    {
-        name: "SDGs",
-        link: "/sdgs",
-    },
-    { name: "Blogs", link: "/blogs" },
-    { name: "Flipbook", link: "/flipbook" },
-    {
-        name: "About Us",
-        link: "/abouts",
-    },
+    { key: "sdgs" },
+    { key: "blogs" },
+    { key: "flipbook" },
+    { key: "about" },
 ]
 
 export default function Navbar({
@@ -42,6 +33,8 @@ export default function Navbar({
     className?: string
     variant?: "solid" | "transparent"
 }) {
+    const t = useTranslations("Header.Navbar")
+
     return (
         <div
             className={`"block ${variant === "transparent" && "invisible opacity-0 group-hover:visible group-hover:opacity-100"} ${className}`}
@@ -49,56 +42,18 @@ export default function Navbar({
             {/* Desktop navigation */}
             <NavigationMenu className="hidden lg:flex">
                 <NavigationMenuList>
-                    {navElements.map(({ name, link, childs }) => {
-                        return childs ? (
-                            <NavigationMenuItem key={name}>
-                                <NavigationMenuTrigger>
-                                    <NavigationMenuLink asChild>
-                                        <Link
-                                            href={link}
-                                            className="from-primary to-primary group relative inline-flex h-10 w-max items-center justify-center rounded-md bg-linear-to-r bg-size-[0%_2px] bg-bottom bg-no-repeat py-2 pb-1 text-sm font-medium transition-all duration-300 select-none hover:bg-size-[50%_2px] focus:outline-none"
-                                        >
-                                            {name}
-                                        </Link>
-                                    </NavigationMenuLink>
-                                </NavigationMenuTrigger>
-                                <NavigationMenuContent>
-                                    <ul className="grid w-150 gap-3 p-4 lg:grid-cols-3">
-                                        {childs.map(
-                                            ({ name, link, description }: NavElementType) => (
-                                                <li key={name}>
-                                                    <NavigationMenuLink asChild>
-                                                        <Link
-                                                            href={`${link}`}
-                                                            className="hover:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none"
-                                                        >
-                                                            <div className="text-sm leading-none font-medium">
-                                                                {name}
-                                                            </div>
-                                                            <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
-                                                                {description}
-                                                            </p>
-                                                        </Link>
-                                                    </NavigationMenuLink>
-                                                </li>
-                                            ),
-                                        )}
-                                    </ul>
-                                </NavigationMenuContent>
-                            </NavigationMenuItem>
-                        ) : (
-                            <NavigationMenuItem
-                                key={name}
-                                className="from-primary to-primary group hover:text-accent-foreground relative inline-flex h-10 w-max items-center justify-center rounded-md bg-linear-to-r bg-size-[0%_2px] bg-bottom bg-no-repeat px-4 py-2 pb-1 text-sm font-medium transition-all duration-300 select-none hover:bg-size-[50%_2px] focus:outline-none"
-                            >
-                                <NavigationMenuLink asChild>
-                                    <Link href={link} className="">
-                                        {name}
-                                    </Link>
-                                </NavigationMenuLink>
-                            </NavigationMenuItem>
-                        )
-                    })}
+                    {navElements.map(({ key }) => (
+                        <NavigationMenuItem
+                            key={key}
+                            className="from-primary to-primary group hover:text-accent-foreground relative inline-flex h-10 w-max items-center justify-center rounded-md bg-linear-to-r bg-size-[0%_2px] bg-bottom bg-no-repeat px-4 py-2 pb-1 text-sm font-medium transition-all duration-300 select-none hover:bg-size-[50%_2px] focus:outline-none"
+                        >
+                            <NavigationMenuLink asChild>
+                                <Link href={`/${key}`} className="">
+                                    {t(key)}
+                                </Link>
+                            </NavigationMenuLink>
+                        </NavigationMenuItem>
+                    ))}
                 </NavigationMenuList>
             </NavigationMenu>
 
@@ -115,39 +70,34 @@ export default function Navbar({
                 >
                     <SheetTitle className="hidden" />
                     <Accordion type="single" collapsible className="pt-5">
-                        {navElements.map(({ name, link, childs }) => {
+                        {navElements.map(({ key, childs }) => {
                             return childs ? (
-                                <AccordionItem value={name} key={name}>
-                                    <AccordionTrigger>{name}</AccordionTrigger>
+                                <AccordionItem value={key} key={key}>
+                                    <AccordionTrigger>{key}</AccordionTrigger>
                                     <AccordionContent>
                                         <ul className="bg-sidebar w-full gap-3 py-4">
-                                            {childs.map(
-                                                ({ name, link, description }: NavElementType) => (
-                                                    <li key={name}>
-                                                        <Link
-                                                            href={`${link}`}
-                                                            className="hover:bg-accent hover:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none"
-                                                        >
-                                                            <div className="text-sm leading-none font-medium">
-                                                                {name}
-                                                            </div>
-                                                            <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
-                                                                {description}
-                                                            </p>
-                                                        </Link>
-                                                    </li>
-                                                ),
-                                            )}
+                                            {childs.map(({ key }: NavElementType) => (
+                                                <li key={key}>
+                                                    <Link
+                                                        href={`${key}`}
+                                                        className="hover:bg-accent hover:text-accent-foreground block space-y-1 rounded-md p-3 leading-none no-underline transition-colors outline-none select-none"
+                                                    >
+                                                        <div className="text-sm leading-none font-medium">
+                                                            {key}
+                                                        </div>
+                                                    </Link>
+                                                </li>
+                                            ))}
                                         </ul>
                                     </AccordionContent>
                                 </AccordionItem>
                             ) : (
-                                <AccordionItem value={name} key={name}>
+                                <AccordionItem value={key} key={key}>
                                     <Link
-                                        href={link}
+                                        href={`/${key}`}
                                         className="group bg-background hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground inline-flex w-150 items-center gap-3 rounded-md py-4 text-sm font-medium transition-colors focus:outline-none md:grid-cols-3"
                                     >
-                                        {name}
+                                        {key}
                                     </Link>
                                 </AccordionItem>
                             )

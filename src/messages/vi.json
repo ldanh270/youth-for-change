@@ -1,6 +1,27 @@
 {
-    "HomePage": {},
+    "Language": {
+        "Title": "Chọn ngôn ngữ",
+        "Description": "Chọn ngôn ngữ bạn muốn sử dụng cho giao diện."
+    },
+    "Header": {
+        "Navbar": {
+            "sdgs": "SDGs",
+            "blogs": "Bài viết",
+            "flipbook": "Flipbook",
+            "about": "Về chúng tôi"
+        }
+    },
+
+    "HomePage": {
+        "SDGsShowcase": {
+            "Title": "17 mục tiêu phát triển bền vững",
+            "Subtitle": "Khám phá các sáng kiến ​​của chúng tôi phù hợp với mục tiêu Phát triển Bền vững của Liên Hợp Quốc"
+        }
+    },
+
     "SDGsPage": {},
+
     "AboutPage": {},
+
     "BlogsPage": {}
 }

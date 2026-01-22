@@ -7,6 +7,7 @@ import { SDGs } from "#/configs/sdgs"
 import { useRef } from "react"
 
 import AutoScroll from "embla-carousel-auto-scroll"
+import { useTranslations } from "next-intl"
 import Image from "next/image"
 
 export function SDGShowcase() {
@@ -19,18 +20,17 @@ export function SDGShowcase() {
         }),
     )
 
+    const t = useTranslations("HomePage.SDGsShowcase")
+
     return (
         <section className="bg-secondary py-16">
             <div className="container mx-auto px-4">
                 {/* Heading */}
                 <div className="mb-12 text-center">
                     <h2 className="font-title text-foreground mb-4 text-3xl font-bold md:text-4xl">
-                        17 Sustainable Development Goals
+                        {t("Title")}
                     </h2>
-                    <p className="text-muted-foreground mx-auto max-w-2xl">
-                        Explore our initiatives aligned with the United Nations Sustainable
-                        Development Goals
-                    </p>
+                    <p className="text-muted-foreground mx-auto max-w-3xl">{t("Subtitle")}</p>
                 </div>
 
                 {/* Carousel */}
