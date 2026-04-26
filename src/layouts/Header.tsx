@@ -15,8 +15,9 @@ export default function Header({
     return (
         <header
             className={cn(
-                "bg-background group absolute top-0 z-40 w-full transition-all duration-300",
-                variant === "solid" ? "bg-background" : "text-foreground not-hover:bg-transparent",
+                "group z-40 w-full transition-all duration-300",
+                !className?.includes("fixed") && !className?.includes("static") && "absolute top-0",
+                variant === "solid" ? "bg-background text-foreground" : "bg-transparent text-foreground hover:bg-background",
                 className,
             )}
         >

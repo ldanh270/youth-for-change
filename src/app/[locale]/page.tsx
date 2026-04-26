@@ -11,7 +11,6 @@ export default async function HomePage() {
 
     return (
         <div className="hide-scrollbar">
-            <Header variant="transparent" className="z-40" />
             <main className="flex-1">
                 <HeroSection className="animate-fade-in" blogs={blogs} />
                 <SDGShowcase />

@@ -37,8 +37,14 @@ export async function LatestBlogs({
                     {blogs
                         .filter(isFullPage)
                         .slice(0, 3)
-                        .map((blog) => (
-                            <BlogCard blog={blog} key={blog.id} />
+                        .map((blog, index) => (
+                            <div 
+                                key={blog.id} 
+                                className="animate-fade-in-up" 
+                                style={{ animationDelay: `${index * 200}ms`, animationFillMode: 'both' }}
+                            >
+                                <BlogCard blog={blog} />
+                            </div>
                         ))}
                 </div>
                 <Button variant="outline" asChild className="mt-4 w-full md:mt-0 md:hidden">
