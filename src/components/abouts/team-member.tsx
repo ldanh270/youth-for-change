@@ -4,6 +4,7 @@ import { TEAM_MEMBERS } from "#/configs/members"
 import { SOCIALS } from "#/configs/socials"
 
 // Ensure you use the correct Link import for your setup (e.g., from '@/navigation')
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { useTranslations } from "next-intl"
 import Image from "next/image"
 import Link from "next/link"
@@ -74,7 +75,10 @@ export default function TeamMembersSection() {
                                                             aria-label={label}
                                                         >
                                                             {Icon ? (
-                                                                <Icon className="h-5 w-5" />
+                                                                <FontAwesomeIcon
+                                                                    icon={Icon}
+                                                                    className="h-5 w-5"
+                                                                />
                                                             ) : null}
                                                         </Link>
                                                     )

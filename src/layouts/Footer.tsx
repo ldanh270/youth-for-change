@@ -5,6 +5,7 @@ import { Input } from "#/components/ui/input"
 import { Separator } from "#/components/ui/separator"
 import { SOCIALS } from "#/configs/socials"
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { Mail } from "lucide-react"
 // 1. IMPORT i18n TOOLS
 import { useTranslations } from "next-intl"
@@ -102,7 +103,7 @@ export default function Footer() {
                                     className="bg-secondary hover:bg-primary hover:text-primary-foreground flex h-10 w-10 items-center justify-center rounded-full transition-colors"
                                     aria-label={social.label}
                                 >
-                                    <social.icon className="h-5 w-5" />
+                                    <FontAwesomeIcon icon={social.icon} className="h-5 w-5" />
                                 </Link>
                             ))}
                         </div>
