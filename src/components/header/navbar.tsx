@@ -8,6 +8,7 @@ import {
     NavigationMenuList,
 } from "#/components/ui/navigation-menu"
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "#/components/ui/sheet"
+import { cn } from "#/libs/utils"
 
 import { AccordionContent } from "@radix-ui/react-accordion"
 import { Menu } from "lucide-react"
@@ -37,7 +38,13 @@ export default function Navbar({
 
     return (
         <div
-            className={`"block ${variant === "transparent" && "invisible opacity-0 group-hover:visible group-hover:opacity-100"} ${className}`}
+            className={cn(
+                "block transition-all duration-300",
+                variant === "transparent" 
+                    ? "opacity-0 -translate-y-1 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto" 
+                    : "opacity-100 translate-y-0",
+                className
+            )}
         >
             {/* Desktop navigation */}
             <NavigationMenu className="hidden lg:flex">

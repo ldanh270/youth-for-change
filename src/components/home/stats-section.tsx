@@ -2,6 +2,7 @@
 
 import { Award, Globe, Target, Users } from "lucide-react"
 import { useTranslations } from "next-intl"
+import { cn } from "#/libs/utils"
 
 const statConfig = [
     {
@@ -40,9 +41,16 @@ export function StatsSection() {
 
                 {/* Stats */}
                 <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
-                    {statConfig.map((stat) => (
-                        <div key={stat.id} className="text-center">
-                            <div className="bg-primary-foreground/10 mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full">
+                    {statConfig.map((stat, index) => (
+                        <div 
+                            key={stat.id} 
+                            className={cn(
+                                "text-center transition-all duration-500",
+                                "animate-fade-in-up"
+                            )}
+                            style={{ animationDelay: `${index * 150}ms`, animationFillMode: 'both' }}
+                        >
+                            <div className="bg-primary-foreground/10 mb-4 inline-flex h-16 w-16 items-center justify-center rounded-full transition-transform hover:scale-110">
                                 <stat.icon className="h-8 w-8" />
                             </div>
                             <div className="font-title mb-2 text-4xl font-bold md:text-5xl">
