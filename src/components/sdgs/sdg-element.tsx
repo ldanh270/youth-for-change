@@ -1,8 +1,8 @@
 "use client"
 
 import { Card, CardContent } from "#/components/ui/card"
+import { useTranslations } from "next-intl";
 
-import { useTranslations } from "next-intl"
 import Image from "next/image"
 
 interface ISDGElement {

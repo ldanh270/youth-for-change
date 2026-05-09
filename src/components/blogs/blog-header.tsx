@@ -1,11 +1,11 @@
 import { Badge } from "#/components/ui/badge"
 import { SDGs } from "#/configs/sdgs"
+import { getTranslations } from "next-intl/server";
 
-import { useTranslations } from "next-intl"
 import Link from "next/link"
 
-export default function BlogHeader({ className, tag }: { className?: string; tag?: string }) {
-    const t = useTranslations("BlogsPage")
+export default async function BlogHeader({ className, tag }: { className?: string; tag?: string }) {
+    const t = await getTranslations("BlogsPage")
 
     const checkTags = ({ id }: { id: number }) => {
         if (tag) {

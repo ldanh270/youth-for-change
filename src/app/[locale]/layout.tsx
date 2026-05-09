@@ -8,6 +8,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl"
 import { ThemeProvider } from "next-themes"
 import { Geist, Geist_Mono, Montserrat } from "next/font/google"
 import { notFound } from "next/navigation"
+import { setRequestLocale } from 'next-intl/server';
 
 import "../globals.css"
 
@@ -32,6 +33,10 @@ export const metadata: Metadata = {
     description: "Youth for change 2025 - Landing page website for 17 SDGs communication",
 }
 
+export function generateStaticParams() {
+    return [{ locale: 'en' }, { locale: 'vi' }];
+}
+
 export default async function RootLayout({
     children,
     params,
@@ -44,6 +49,8 @@ export default async function RootLayout({
     if (!hasLocale(routing.locales, locale)) {
         notFound()
     }
+
+    setRequestLocale(locale);
 
     return (
         <html lang="en" suppressHydrationWarning>

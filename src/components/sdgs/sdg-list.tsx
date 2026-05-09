@@ -2,8 +2,8 @@
 
 import SDGElement from "#/components/sdgs/sdg-element"
 import { SDGs } from "#/configs/sdgs"
+import { useTranslations } from "next-intl";
 
-import { useTranslations } from "next-intl"
 
 export default function SDGList() {
     const t = useTranslations("Core.SDGs")

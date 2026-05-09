@@ -7,10 +7,10 @@ import { SDGs } from "#/configs/sdgs"
 import { useRef } from "react"
 
 import AutoScroll from "embla-carousel-auto-scroll"
-import { useTranslations } from "next-intl"
 import Image from "next/image"
+import { useTranslations } from "next-intl";
 
-export function SDGShowcase() {
+export default function SDGShowcase() {
     const plugin = useRef(
         AutoScroll({
             speed: 1, // Slider speed

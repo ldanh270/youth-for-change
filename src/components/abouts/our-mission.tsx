@@ -1,7 +1,7 @@
-import { useTranslations } from "next-intl"
+import { getTranslations } from "next-intl/server";
 
-export default function OurMissionSection() {
-    const t = useTranslations("AboutPage.Mission")
+export default async function OurMissionSection() {
+    const t = await getTranslations("AboutPage.Mission")
     return (
         <section className="from-primary via-primary/90 to-accent relative overflow-hidden bg-linear-to-br py-20 text-white">
             <div className="absolute top-0 right-0 h-96 w-96 rounded-full bg-white/5 blur-3xl"></div>

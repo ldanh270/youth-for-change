@@ -4,7 +4,7 @@ import { timeFormatter } from "#/libs/utils"
 
 import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints"
 import { ArrowRight } from "lucide-react"
-import { useTranslations } from "next-intl"
+import { useTranslations } from "next-intl";
 import Image from "next/image"
 import Link from "next/link"
 
@@ -29,7 +29,7 @@ export default function BlogCard({ blog }: { blog: PageObjectResponse }) {
     const cover = blog.cover?.type === "external" ? blog.cover?.external?.url : "/placeholder.png"
 
     const tag =
-        blog.properties?.Tag.type === "select" ? blog.properties.Tag.select?.name : "General"
+        blog.properties?.Tag?.type === "select" ? blog.properties.Tag.select?.name : "General"
 
     const lastEditedTime = blog.last_edited_time
 

@@ -18,7 +18,7 @@ import { Check, Globe } from "lucide-react"
 import { useLocale, useTranslations } from "next-intl"
 import { usePathname, useRouter } from "next/navigation"
 
-export function LanguageSwitcher() {
+export default function LanguageSwitcher() {
     const [isPending, startTransition] = useTransition()
     const [open, setOpen] = useState(false)
     const router = useRouter()

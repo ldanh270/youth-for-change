@@ -12,7 +12,7 @@ import { cn } from "#/libs/utils"
 
 import { AccordionContent } from "@radix-ui/react-accordion"
 import { Menu } from "lucide-react"
-import { useTranslations } from "next-intl"
+import { useTranslations } from "next-intl";
 import Link from "next/link"
 
 type NavElementType = {
