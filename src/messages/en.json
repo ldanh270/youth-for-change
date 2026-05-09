@@ -157,6 +157,7 @@
     },
 
     "HomePage": {
+        "Title": "Homepage",
         "SDGsShowcase": {
             "Title": "Sustainable Development Goals",
             "Subtitle": "Explore our initiatives aligned with the United Nations Sustainable Development Goals"
