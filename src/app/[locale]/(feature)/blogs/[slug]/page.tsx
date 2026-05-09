@@ -22,9 +22,15 @@ export async function generateStaticParams() {
     const rawPosts = await getCachedLatestPosts({ limit: 5 })
     const blogs = rawPosts.blogs.map((post) => mapBlogToCard(post as Blog))
 
-    return blogs.map((blog) => ({
-        slug: blog.slug,
-    }))
+    const locales = ['en', 'vi']; 
+    const params = [];
+
+    for (const locale of locales) {
+        for (const blog of blogs) {
+            params.push({ locale, slug: blog.slug });
+        }
+    }
+    return params;
 }
 
 /**

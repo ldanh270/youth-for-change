@@ -1,8 +1,8 @@
 "use client"
 
 import { Award, Globe, Target, Users } from "lucide-react"
-import { useTranslations } from "next-intl"
 import { cn } from "#/libs/utils"
+import { useTranslations } from "next-intl";
 
 const statConfig = [
     {
@@ -23,7 +23,7 @@ const statConfig = [
     },
 ]
 
-export function StatsSection() {
+export default function StatsSection() {
     const t = useTranslations("HomePage.StatsSection")
 
     return (

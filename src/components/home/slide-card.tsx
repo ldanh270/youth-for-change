@@ -2,7 +2,7 @@ import { Badge } from "#/components/ui/badge"
 import { Button } from "#/components/ui/button"
 
 import { PageObjectResponse } from "@notionhq/client"
-import { useTranslations } from "next-intl"
+import { useTranslations } from "next-intl";
 import Link from "next/link"
 
 export default function SlideCard({
@@ -32,7 +32,7 @@ export default function SlideCard({
     const cover = blog.cover?.type === "external" ? blog.cover?.external?.url : "/placeholder.png"
 
     const tag =
-        blog.properties?.Tag.type === "select" ? blog.properties.Tag.select?.name : "General"
+        blog.properties?.Tag?.type === "select" ? blog.properties.Tag.select?.name : "General"
 
     return (
         <div

@@ -1,9 +1,8 @@
 import { HeroSection } from "#/components/home/hero-section"
 import { LatestBlogs } from "#/components/home/latest-blogs"
-import { SDGShowcase } from "#/components/home/sdg-showcase"
-import { StatsSection } from "#/components/home/stats-section"
+import  SDGShowcase  from "#/components/home/sdg-showcase"
+import  StatsSection  from "#/components/home/stats-section"
 import Footer from "#/layouts/Footer"
-import Header from "#/layouts/Header"
 import { getCachedLatestPosts } from "#/libs/cache"
 
 export default async function HomePage() {

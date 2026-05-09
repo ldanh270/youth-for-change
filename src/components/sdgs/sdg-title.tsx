@@ -1,6 +1,6 @@
 "use client"
 
-import { useTranslations } from "next-intl"
+import { useTranslations } from "next-intl";
 
 export default function SDGHeading() {
     const t = useTranslations("SDGsPage.Heading")

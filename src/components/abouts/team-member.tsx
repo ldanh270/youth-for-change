@@ -3,9 +3,8 @@
 import { TEAM_MEMBERS } from "#/configs/members"
 import { SOCIALS } from "#/configs/socials"
 
-// Ensure you use the correct Link import for your setup (e.g., from '@/navigation')
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { useTranslations } from "next-intl"
+import { useTranslations } from "next-intl";
 import Image from "next/image"
 import Link from "next/link"
 
@@ -44,7 +43,7 @@ export default function TeamMembersSection() {
                                             <div className="flex h-full w-full items-center justify-center text-6xl transition-transform duration-300 group-hover:scale-110">
                                                 <Image
                                                     src={image}
-                                                    alt={t("title")}
+                                                    alt={name}
                                                     width={500}
                                                     height={500}
                                                 />

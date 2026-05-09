@@ -1,10 +1,6 @@
 import { ModeToggle } from "#/components/themes/mode-toggle"
-import { LanguageSwitcher } from "#/components/translations/LanguageSwitcher"
-import { Button } from "#/components/ui/button"
+import LanguageSwitcher from "#/components/translations/LanguageSwitcher"
 import { cn } from "#/libs/utils"
-
-import { Globe, Search } from "lucide-react"
-import Link from "next/link"
 
 export default function ActionButtions({
     className,
